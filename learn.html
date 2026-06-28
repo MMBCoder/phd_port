@@ -1,0 +1,515 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn computational chemistry tools — RDKit, DeepChem, OpenBabel, ASE, PySCF, PyTorch — explained simply by Dr. Farha Arshi.">
+  <title>Learn | Dr. Farha Arshi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">Dr. <span>Farha Arshi</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu" role="menubar">
+      <li><a href="index.html"      class="nav-link">Home</a></li>
+      <li><a href="about.html"      class="nav-link">About</a></li>
+      <li><a href="research.html"   class="nav-link">Research</a></li>
+      <li><a href="learn.html"      class="nav-link">Learn</a></li>
+      <li><a href="experience.html" class="nav-link">Experience</a></li>
+      <li><a href="contact.html"    class="nav-link">Contact</a></li>
+      <li class="nav-soc-mob" aria-label="Academic profiles">
+        <a class="nav-soc" href="https://linkedin.com/in/farha-arshi-7b2131173" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" data-tip="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a class="nav-soc" href="https://orcid.org/0000-0002-2891-5697" target="_blank" rel="noopener noreferrer" aria-label="ORCID profile" data-tip="ORCID"><svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128 0C57.3 0 0 57.3 0 128s57.3 128 128 128 128-57.3 128-128S198.7 0 128 0zm-8.7 56.4c4 0 7.2 3.2 7.2 7.2s-3.2 7.2-7.2 7.2-7.2-3.2-7.2-7.2 3.2-7.2 7.2-7.2zm-3.6 26.8h7.2v90.5h-7.2V83.2zm33 0h22.9c22 0 37.4 15.1 37.4 45.1 0 29.9-15.5 45.4-37.4 45.4h-22.9V83.2zm7.2 7.3v76.1h14.6c16.9 0 28.8-10.3 28.8-38 0-28-11.8-38.1-28.8-38.1h-14.6z"/></svg></a>
+        <a class="nav-soc" href="https://scholar.google.com/citations?user=JAw7WC4AAAAJ" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar profile" data-tip="Scholar"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.242 13.769 0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg></a>
+      </li>
+    </ul>
+    <div class="nav-right" aria-label="Academic profiles">
+      <a class="nav-soc" href="https://linkedin.com/in/farha-arshi-7b2131173" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" data-tip="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      <a class="nav-soc" href="https://orcid.org/0000-0002-2891-5697" target="_blank" rel="noopener noreferrer" aria-label="ORCID profile" data-tip="ORCID"><svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128 0C57.3 0 0 57.3 0 128s57.3 128 128 128 128-57.3 128-128S198.7 0 128 0zm-8.7 56.4c4 0 7.2 3.2 7.2 7.2s-3.2 7.2-7.2 7.2-7.2-3.2-7.2-7.2 3.2-7.2 7.2-7.2zm-3.6 26.8h7.2v90.5h-7.2V83.2zm33 0h22.9c22 0 37.4 15.1 37.4 45.1 0 29.9-15.5 45.4-37.4 45.4h-22.9V83.2zm7.2 7.3v76.1h14.6c16.9 0 28.8-10.3 28.8-38 0-28-11.8-38.1-28.8-38.1h-14.6z"/></svg></a>
+      <a class="nav-soc" href="https://scholar.google.com/citations?user=JAw7WC4AAAAJ" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar profile" data-tip="Scholar"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.242 13.769 0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg></a>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <span class="section-label">Learn</span>
+    <h1 class="page-hero-title">Computational Chemistry, Demystified</h1>
+    <p class="page-hero-desc">
+      A plain-language tour of the key tools in modern cheminformatics — from building
+      3D structures to predicting toxicity with machine learning.
+    </p>
+  </div>
+</section>
+
+<!-- TOOLS SECTION -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Toolbox</span>
+      <h2 class="section-title">Key Software &amp; Libraries</h2>
+      <p class="section-sub">Think of these as the instruments in a computational chemist's orchestra — each plays a different part.</p>
+    </div>
+
+    <div class="tools-grid">
+
+      <div class="card tool-card fi" data-delay="1">
+        <div class="tool-icon ti-rdkit" aria-hidden="true">🧬</div>
+        <div class="tool-name">RDKit</div>
+        <div class="tool-tag">Cheminformatics</div>
+        <p class="tool-desc">
+          RDKit is like a GPS for molecules. Give it a SMILES string — a line of text
+          that describes a molecule — and it plots the full 3D structure. It can
+          optimise geometry, compute molecular fingerprints, calculate properties such
+          as molecular weight and logP, and generate publication-ready images.
+          It's the starting point for almost every drug-discovery pipeline.
+        </p>
+      </div>
+
+      <div class="card tool-card fi" data-delay="2">
+        <div class="tool-icon ti-dc" aria-hidden="true">🤖</div>
+        <div class="tool-name">DeepChem</div>
+        <div class="tool-tag">Deep Learning for Chemistry</div>
+        <p class="tool-desc">
+          DeepChem is a digital chemist's brain. It ships with pre-trained models and
+          curated datasets (MoleculeNet) covering toxicity, solubility, binding affinity,
+          and more. Feed it a molecule; it predicts whether the compound might be toxic,
+          penetrate cell membranes, or bind to a target — in milliseconds. No wet lab
+          required for the initial screen.
+        </p>
+      </div>
+
+      <div class="card tool-card fi" data-delay="3">
+        <div class="tool-icon ti-ob" aria-hidden="true">🔧</div>
+        <div class="tool-name">Open Babel</div>
+        <div class="tool-tag">Chemical Format Converter</div>
+        <p class="tool-desc">
+          Open Babel is the Swiss Army knife for chemists. It translates molecules
+          between over 100 file formats (SDF, PDB, MOL2, SMILES, …), generates 3D
+          conformers from flat structures, applies force-field minimisation, and
+          computes basic descriptors. If two pieces of software speak different
+          "chemical languages", Open Babel is the interpreter.
+        </p>
+      </div>
+
+      <div class="card tool-card fi" data-delay="1">
+        <div class="tool-icon ti-ase" aria-hidden="true">⚛️</div>
+        <div class="tool-name">ASE</div>
+        <div class="tool-tag">Atomistic Simulation Environment</div>
+        <p class="tool-desc">
+          ASE (Atomic Simulation Environment) is a Python toolkit for setting up,
+          running, and analysing atomistic simulations. Think of it as the conductor:
+          it orchestrates geometry optimisations, molecular dynamics runs, and
+          transition-state searches — delegating the actual quantum calculations to
+          backends like GAUSSIAN or PySCF.
+        </p>
+      </div>
+
+      <div class="card tool-card fi" data-delay="2">
+        <div class="tool-icon ti-pyscf" aria-hidden="true">📐</div>
+        <div class="tool-name">PySCF</div>
+        <div class="tool-tag">Quantum Chemistry in Python</div>
+        <p class="tool-desc">
+          PySCF is a modern quantum chemistry library written almost entirely in Python.
+          It implements DFT, Hartree-Fock, MP2, CCSD, and more. Researchers use it to
+          compute the ground-state energy, electron density, and forces of a molecule —
+          the "ground truth" that machine-learned force fields learn from.
+        </p>
+      </div>
+
+      <div class="card tool-card fi" data-delay="3">
+        <div class="tool-icon ti-torch" aria-hidden="true">🔥</div>
+        <div class="tool-name">PyTorch</div>
+        <div class="tool-tag">Neural Network Framework</div>
+        <p class="tool-desc">
+          PyTorch is the engine behind most modern ML force fields and graph neural
+          networks for property prediction. Its automatic differentiation engine
+          (<code>autograd</code>) lets you derive forces from energies with a single
+          line of code — exactly what you need when training a neural network potential
+          to replace expensive DFT calculations.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PIPELINE -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Workflow</span>
+      <h2 class="section-title">Virtual Screening Pipeline</h2>
+      <p class="section-sub">How a library of thousands of molecules is narrowed down to a handful of promising drug candidates — all before stepping into a lab.</p>
+    </div>
+
+    <div class="two-col fi" style="align-items:start;gap:3rem;">
+      <div>
+        <div class="pipe-steps">
+          <div class="pipe-step">
+            <div class="pipe-left">
+              <div class="pipe-num">1</div>
+              <div class="pipe-line"></div>
+            </div>
+            <div class="pipe-right">
+              <div class="pipe-title">Build 3D Structures</div>
+              <span class="pipe-tool">RDKit</span>
+              <p class="pipe-desc">
+                Read thousands of SMILES strings from a compound library. RDKit converts
+                each flat SMILES into a 3D molecular geometry using its ETKDG algorithm,
+                then minimises the energy with a molecular mechanics force field.
+              </p>
+            </div>
+          </div>
+          <div class="pipe-step">
+            <div class="pipe-left">
+              <div class="pipe-num">2</div>
+              <div class="pipe-line"></div>
+            </div>
+            <div class="pipe-right">
+              <div class="pipe-title">Filter Drug-Likeness</div>
+              <span class="pipe-tool">RDKit &amp; Lipinski Rules</span>
+              <p class="pipe-desc">
+                Apply Lipinski's Rule of Five (MW &lt; 500, logP &lt; 5, H-bond donors &lt; 5,
+                acceptors &lt; 10) to retain only orally bioavailable candidates.
+                RDKit computes all descriptors in seconds.
+              </p>
+            </div>
+          </div>
+          <div class="pipe-step">
+            <div class="pipe-left">
+              <div class="pipe-num">3</div>
+              <div class="pipe-line"></div>
+            </div>
+            <div class="pipe-right">
+              <div class="pipe-title">Toxicity Screening</div>
+              <span class="pipe-tool">DeepChem (Tox21 model)</span>
+              <p class="pipe-desc">
+                Run each molecule through a pre-trained graph neural network trained on
+                the Tox21 dataset (12 toxicity endpoints). Molecules flagged as "likely
+                toxic" are removed — before any synthesis is attempted.
+              </p>
+            </div>
+          </div>
+          <div class="pipe-step">
+            <div class="pipe-left">
+              <div class="pipe-num">4</div>
+              <div class="pipe-line"></div>
+            </div>
+            <div class="pipe-right">
+              <div class="pipe-title">Molecular Docking</div>
+              <span class="pipe-tool">AutoDock / OpenMM</span>
+              <p class="pipe-desc">
+                Dock surviving molecules into the active site of a target protein and
+                compute a binding-affinity score. Compounds with the best scores advance
+                to experimental validation in the wet lab.
+              </p>
+            </div>
+          </div>
+          <div class="pipe-step">
+            <div class="pipe-left">
+              <div class="pipe-num">5</div>
+            </div>
+            <div class="pipe-right">
+              <div class="pipe-title">ADME Prediction &amp; Hit Selection</div>
+              <span class="pipe-tool">SwissADME / pkCSM</span>
+              <p class="pipe-desc">
+                Predict absorption, distribution, metabolism, and excretion (ADME) to
+                rank the final hits. The top compounds are then synthesised and tested
+                in cell-based and enzyme assays.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Code block -->
+      <div>
+        <div class="code-wrap" style="margin-bottom:1.5rem;">
+          <div class="code-head">
+            <div class="c-dots">
+              <span class="c-dot dot-r"></span>
+              <span class="c-dot dot-y"></span>
+              <span class="c-dot dot-g"></span>
+            </div>
+            <span class="c-lang">Python &mdash; pipeline_screen.py</span>
+          </div>
+          <div class="code-body">
+<pre><span style="color:#546e7a;"># Simplified virtual screening pipeline</span>
+<span style="color:#c792ea;">from</span> <span style="color:#82aaff;">rdkit</span> <span style="color:#c792ea;">import</span> Chem
+<span style="color:#c792ea;">from</span> <span style="color:#82aaff;">rdkit.Chem</span> <span style="color:#c792ea;">import</span> AllChem, Descriptors
+<span style="color:#c792ea;">import</span> <span style="color:#82aaff;">deepchem</span> <span style="color:#c792ea;">as</span> dc
+
+results = []
+
+<span style="color:#c792ea;">for</span> smiles <span style="color:#c792ea;">in</span> candidate_library:
+
+    <span style="color:#546e7a;"># Step 1 — build 3D structure</span>
+    mol = Chem.MolFromSmiles(smiles)
+    mol = Chem.AddHs(mol)
+    AllChem.EmbedMolecule(mol, AllChem.ETKDG())
+    AllChem.MMFFOptimizeMolecule(mol)
+
+    <span style="color:#546e7a;"># Step 2 — Lipinski filter</span>
+    mw  = Descriptors.MolWt(mol)
+    logp = Descriptors.MolLogP(mol)
+    <span style="color:#c792ea;">if</span> mw &gt; 500 <span style="color:#c792ea;">or</span> logp &gt; 5:
+        <span style="color:#c792ea;">continue</span>
+
+    <span style="color:#546e7a;"># Step 3 — toxicity screen (DeepChem Tox21)</span>
+    X = featurizer.featurize([smiles])
+    tox = tox_model.predict(X)[<span style="color:#f78c6c;">0</span>]
+    <span style="color:#c792ea;">if</span> tox.max() &gt; <span style="color:#f78c6c;">0.5</span>:
+        <span style="color:#c792ea;">continue</span>
+
+    <span style="color:#546e7a;"># Step 4 — docking score</span>
+    score = dock(mol, target_protein)
+    results.append({<span style="color:#c3e88d;">"smiles"</span>: smiles,
+                    <span style="color:#c3e88d;">"score"</span>: score})
+
+<span style="color:#546e7a;"># Rank by binding affinity</span>
+results.sort(key=<span style="color:#c792ea;">lambda</span> x: x[<span style="color:#c3e88d;">"score"</span>])
+</pre>
+          </div>
+        </div>
+
+        <!-- Chart -->
+        <div class="chart-wrap">
+          <div class="chart-title">Hypothetical Docking Scores — Top 8 Candidates</div>
+          <canvas id="dockChart" aria-label="Bar chart of docking scores" role="img"></canvas>
+          <p style="color:var(--text-muted);font-size:.78rem;margin-top:.75rem;font-style:italic;">
+            Negative values indicate stronger predicted binding affinity (kcal/mol).
+            Compounds with scores below −8.0 typically advance to synthesis.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ML FORCE FIELD -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Advanced Topic</span>
+      <h2 class="section-title">Machine-Learned Force Fields</h2>
+      <p class="section-sub">
+        Teaching a neural network to predict quantum energies — making DFT-quality
+        calculations millions of times faster.
+      </p>
+    </div>
+
+    <div class="two-col fi" style="gap:3rem; align-items:start;">
+      <div>
+        <div class="card" style="margin-bottom:1.5rem;">
+          <h4 style="color:var(--white);margin-bottom:1rem;">The Idea</h4>
+          <p style="color:var(--text-sec);">
+            DFT calculations are accurate but slow — a single-point energy for a
+            drug-sized molecule can take hours. Machine-learned force fields (ML-FFs)
+            solve this: we train a neural network on thousands of DFT calculations
+            of slightly perturbed geometries. The network learns to <em>predict</em>
+            energies and forces from atomic positions — with near-DFT accuracy but
+            at classical-simulation speed.
+          </p>
+          <p style="color:var(--text-sec);margin-bottom:0;">
+            It's like teaching a student by showing them worked examples: once trained,
+            they can solve new problems in seconds rather than starting from scratch
+            every time.
+          </p>
+        </div>
+        <div class="card">
+          <h4 style="color:var(--white);margin-bottom:1rem;">Workflow</h4>
+          <ul class="hl-list">
+            <li><strong>ASE</strong> — perturb the molecular geometry ~1000 times (small random displacements)</li>
+            <li><strong>PySCF</strong> — compute DFT energy + forces for each perturbed geometry (ground truth)</li>
+            <li><strong>PyTorch</strong> — train a neural network on {geometry → energy, forces} pairs</li>
+            <li>Forces are the gradient of the predicted energy w.r.t. atom positions (<code>autograd</code>)</li>
+            <li>The trained model runs molecular dynamics millions of times faster than DFT</li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <div class="code-wrap" style="margin-bottom:1.5rem;">
+          <div class="code-head">
+            <div class="c-dots">
+              <span class="c-dot dot-r"></span>
+              <span class="c-dot dot-y"></span>
+              <span class="c-dot dot-g"></span>
+            </div>
+            <span class="c-lang">Python &mdash; ml_forcefield.py</span>
+          </div>
+          <div class="code-body">
+<pre><span style="color:#c792ea;">import</span> <span style="color:#82aaff;">torch</span>
+<span style="color:#c792ea;">import</span> <span style="color:#82aaff;">torch.nn</span> <span style="color:#c792ea;">as</span> nn
+<span style="color:#c792ea;">from</span> <span style="color:#82aaff;">ase</span> <span style="color:#c792ea;">import</span> Atoms
+<span style="color:#c792ea;">from</span> <span style="color:#82aaff;">pyscf</span> <span style="color:#c792ea;">import</span> dft
+
+<span style="color:#546e7a;"># Step 1 — generate training data via ASE + PySCF</span>
+molecule = Atoms(<span style="color:#c3e88d;">'H2O'</span>, positions=[...])
+geometries, energies, forces = [], [], []
+
+<span style="color:#c792ea;">for</span> _ <span style="color:#c792ea;">in</span> range(<span style="color:#f78c6c;">1000</span>):
+    geo = perturb(molecule)          <span style="color:#546e7a;"># small random shift</span>
+    e, f = pyscf_dft(geo)           <span style="color:#546e7a;"># DFT energy + forces</span>
+    geometries.append(geo)
+    energies.append(e)
+    forces.append(f)
+
+<span style="color:#546e7a;"># Step 2 — define neural network</span>
+<span style="color:#c792ea;">class</span> <span style="color:#82aaff;">NeuralFF</span>(nn.Module):
+    <span style="color:#c792ea;">def</span> <span style="color:#82aaff;">__init__</span>(self):
+        <span style="color:#c792ea;">super</span>().__init__()
+        self.net = nn.Sequential(
+            nn.Linear(n_feat, <span style="color:#f78c6c;">128</span>), nn.Tanh(),
+            nn.Linear(<span style="color:#f78c6c;">128</span>, <span style="color:#f78c6c;">64</span>),  nn.Tanh(),
+            nn.Linear(<span style="color:#f78c6c;">64</span>, <span style="color:#f78c6c;">1</span>)
+        )
+    <span style="color:#c792ea;">def</span> <span style="color:#82aaff;">forward</span>(self, x):
+        <span style="color:#c792ea;">return</span> self.net(x)
+
+model = NeuralFF()
+opt   = torch.optim.Adam(model.parameters(), lr=<span style="color:#f78c6c;">1e-3</span>)
+
+<span style="color:#546e7a;"># Step 3 — training loop</span>
+<span style="color:#c792ea;">for</span> epoch <span style="color:#c792ea;">in</span> range(<span style="color:#f78c6c;">500</span>):
+    E_pred = model(X_train)
+    F_pred = -torch.autograd.grad(   <span style="color:#546e7a;"># forces = -dE/dr</span>
+        E_pred.sum(), X_train, create_graph=<span style="color:#f78c6c;">True</span>)[<span style="color:#f78c6c;">0</span>]
+    loss = mse(E_pred, E_train) + mse(F_pred, F_train)
+    opt.zero_grad(); loss.backward(); opt.step()
+</pre>
+          </div>
+        </div>
+
+        <!-- Energy chart -->
+        <div class="chart-wrap">
+          <div class="chart-title">ML-FF vs DFT Energy Parity Plot (Training Data)</div>
+          <canvas id="parityChart" aria-label="Scatter plot comparing ML-FF predicted energies versus DFT reference energies" role="img"></canvas>
+          <p style="color:var(--text-muted);font-size:.78rem;margin-top:.75rem;font-style:italic;">
+            Perfect prediction lies on the dashed diagonal. MAE &lt; 1 kcal/mol is
+            considered "chemical accuracy".
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <p class="footer-text">© 2025 Dr. Farha Arshi · Synthetic &amp; Computational Chemist · Lucknow, India</p>
+    <div class="footer-links">
+      <a href="research.html"   class="footer-link">Research</a>
+      <a href="contact.html"    class="footer-link">Contact</a>
+      <a href="https://linkedin.com/in/farha-arshi-7b2131173"   class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://orcid.org/0000-0002-2891-5697"           class="footer-link" target="_blank" rel="noopener noreferrer">ORCID</a>
+      <a href="https://researchgate.net/profile/Farha-Arshi"    class="footer-link" target="_blank" rel="noopener noreferrer">ResearchGate</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  /* ─── Docking Score Chart ─── */
+  const dockCtx = document.getElementById('dockChart')?.getContext('2d');
+  if (dockCtx) {
+    const compounds = ['Ru-Sch-1','Ru-Sch-2','Ru-Sch-3','Ru-Sch-4','Pd-Sch-1','Ru-Ar-1','Ru-Ar-2','Zn-Sch-1'];
+    const scores    = [-9.4, -8.9, -8.7, -8.2, -7.8, -7.5, -7.1, -6.8];
+    const colors    = scores.map(s => s < -8.5 ? 'rgba(0,245,212,0.8)' : s < -7.5 ? 'rgba(0,180,216,0.75)' : 'rgba(0,119,182,0.65)');
+
+    new Chart(dockCtx, {
+      type: 'bar',
+      data: {
+        labels: compounds,
+        datasets: [{
+          label: 'Docking Score (kcal/mol)',
+          data: scores,
+          backgroundColor: colors,
+          borderColor: colors.map(c => c.replace('0.8','1').replace('0.75','1').replace('0.65','1')),
+          borderWidth: 1,
+          borderRadius: 4,
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: { label: ctx => `${ctx.parsed.y.toFixed(1)} kcal/mol` }
+          }
+        },
+        scales: {
+          x: { ticks: { color: '#90b8cc' }, grid: { color: 'rgba(0,180,216,.08)' } },
+          y: {
+            ticks: { color: '#90b8cc', callback: v => v + ' kcal/mol' },
+            grid:  { color: 'rgba(0,180,216,.08)' },
+            title: { display: true, text: 'Binding Affinity (kcal/mol)', color: '#90b8cc' }
+          }
+        }
+      }
+    });
+  }
+
+  /* ─── Parity Chart (ML-FF vs DFT) ─── */
+  const parCtx = document.getElementById('parityChart')?.getContext('2d');
+  if (parCtx) {
+    const rng = () => -300 + Math.random() * 30;
+    const ref = Array.from({length:40}, rng).sort((a,b)=>a-b);
+    const pred = ref.map(v => v + (Math.random()-0.5)*2.2);
+    new Chart(parCtx, {
+      type: 'scatter',
+      data: {
+        datasets: [
+          {
+            label: 'ML-FF Predictions',
+            data: ref.map((x,i)=>({x,y:pred[i]})),
+            backgroundColor: 'rgba(0,180,216,0.6)',
+            pointRadius: 5,
+          },
+          {
+            label: 'Ideal (DFT = ML-FF)',
+            data: [{x:ref[0],y:ref[0]},{x:ref[ref.length-1],y:ref[ref.length-1]}],
+            type: 'line',
+            borderColor: 'rgba(0,245,212,0.5)',
+            borderDash: [6,4],
+            borderWidth: 1.5,
+            pointRadius: 0,
+            fill: false,
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { labels: { color: '#90b8cc' } } },
+        scales: {
+          x: {
+            title: { display:true, text:'DFT Energy (kcal/mol)', color:'#90b8cc' },
+            ticks: { color:'#90b8cc' }, grid: { color:'rgba(0,180,216,.08)' }
+          },
+          y: {
+            title: { display:true, text:'ML-FF Predicted (kcal/mol)', color:'#90b8cc' },
+            ticks: { color:'#90b8cc' }, grid: { color:'rgba(0,180,216,.08)' }
+          }
+        }
+      }
+    });
+  }
+});
+</script>
+</body>
+</html>
+
