@@ -43,42 +43,57 @@ export default function MolCanvas() {
     const ctx = canvas.getContext("2d")!;
     let raf = 0;
     const nodes: Node[] = [];
-    const COUNT = 48;
-    const CONNECT_DIST = 170;
+
+    /* spawn nodes once at initial size */
+    function spawnNodes(w: number, h: number, count: number) {
+      nodes.length = 0;
+      for (let i = 0; i < count; i++) {
+        const el = ELEMENTS[Math.floor(Math.random() * ELEMENTS.length)];
+        const r  = radiusFor(el.sym);
+        nodes.push({
+          x:  r + Math.random() * (w - r * 2),
+          y:  r + Math.random() * (h - r * 2),
+          vx: (Math.random() - 0.5) * 0.45,
+          vy: (Math.random() - 0.5) * 0.45,
+          sym: el.sym, color: el.color, ring: el.ring, radius: r,
+        });
+      }
+    }
 
     function resize() {
       canvas!.width  = canvas!.offsetWidth;
       canvas!.height = canvas!.offsetHeight;
     }
     resize();
+
+    const isMobile = () => canvas!.width < 768;
+
+    /* initial spawn — fewer nodes on mobile */
+    spawnNodes(canvas.width, canvas.height, isMobile() ? 20 : 48);
+
     window.addEventListener("resize", resize);
 
-    for (let i = 0; i < COUNT; i++) {
-      const el = ELEMENTS[Math.floor(Math.random() * ELEMENTS.length)];
-      const r  = radiusFor(el.sym);
-      nodes.push({
-        x:  r + Math.random() * (canvas.width  - r * 2),
-        y:  r + Math.random() * (canvas.height - r * 2),
-        vx: (Math.random() - 0.5) * 0.45,
-        vy: (Math.random() - 0.5) * 0.45,
-        sym:    el.sym,
-        color:  el.color,
-        ring:   el.ring,
-        radius: r,
-      });
-    }
-
     function draw() {
-      ctx.clearRect(0, 0, canvas!.width, canvas!.height);
+      const w = canvas!.width;
+      const h = canvas!.height;
+      const mobile = w < 768;
+
+      /* on mobile: very short bond distance → almost no bonds rendered */
+      const CONNECT_DIST = mobile ? 55 : 170;
+      /* on mobile: draw at 20% opacity via globalAlpha so text stays readable */
+      const globalOpacity = mobile ? 0.20 : 1.0;
+
+      ctx.clearRect(0, 0, w, h);
+      ctx.globalAlpha = globalOpacity;
 
       for (const n of nodes) {
         n.x += n.vx;
         n.y += n.vy;
-        if (n.x - n.radius < 0 || n.x + n.radius > canvas!.width)  n.vx *= -1;
-        if (n.y - n.radius < 0 || n.y + n.radius > canvas!.height) n.vy *= -1;
+        if (n.x - n.radius < 0 || n.x + n.radius > w) n.vx *= -1;
+        if (n.y - n.radius < 0 || n.y + n.radius > h) n.vy *= -1;
       }
 
-      // bonds
+      /* bonds */
       for (let i = 0; i < nodes.length; i++) {
         for (let j = i + 1; j < nodes.length; j++) {
           const dx = nodes[i].x - nodes[j].x;
@@ -96,28 +111,24 @@ export default function MolCanvas() {
         }
       }
 
-      // atoms
+      /* atoms */
       for (const n of nodes) {
-        // outer glow halo
         ctx.beginPath();
         ctx.arc(n.x, n.y, n.radius * 1.5, 0, Math.PI * 2);
         ctx.fillStyle = n.ring;
         ctx.fill();
 
-        // filled circle body
         ctx.beginPath();
         ctx.arc(n.x, n.y, n.radius, 0, Math.PI * 2);
         ctx.fillStyle = "rgba(7,26,45,0.82)";
         ctx.fill();
 
-        // coloured border ring
         ctx.beginPath();
         ctx.arc(n.x, n.y, n.radius, 0, Math.PI * 2);
         ctx.strokeStyle = n.color;
         ctx.lineWidth   = 1.2;
         ctx.stroke();
 
-        // element label
         const fontSize = n.sym.length >= 3 ? 5.5 : n.sym.length === 2 ? 7 : 8;
         ctx.font      = `600 ${fontSize}px "Space Grotesk", system-ui, sans-serif`;
         ctx.fillStyle = n.color;
@@ -126,6 +137,7 @@ export default function MolCanvas() {
         ctx.fillText(n.sym, n.x, n.y);
       }
 
+      ctx.globalAlpha = 1.0; /* reset */
       raf = requestAnimationFrame(draw);
     }
     draw();
