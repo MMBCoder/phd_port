@@ -30,12 +30,12 @@ export const metadata: Metadata = {
     title: "Dr. Farha Arshi | Synthetic & Computational Chemist",
     description:
       "Advancing metal-based anticancer therapeutics through molecular design.",
-    images: [{ url: "https://drfarhaarshi.space/images/dr-farha-image.png" }],
+    images: [{ url: "https://drfarhaarshi.space/images/new-farha.png" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Dr. Farha Arshi | Synthetic & Computational Chemist",
-    images: ["https://drfarhaarshi.space/images/dr-farha-image.png"],
+    images: ["https://drfarhaarshi.space/images/new-farha.png"],
   },
 };
 

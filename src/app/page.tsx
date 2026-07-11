@@ -146,7 +146,7 @@ export default function HomePage() {
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl"
                   style={{ border: "1px solid rgba(14,124,123,0.35)", background: "rgba(14,124,123,0.06)" }}>
                   <Image
-                    src="/images/dr-farha-image.png"
+                    src="/images/new-farha.png"
                     alt="Dr. Farha Arshi — Synthetic & Computational Chemist"
                     width={400} height={480} priority
                     style={{ objectFit: "cover", maxHeight: "480px", width: "100%" }}
