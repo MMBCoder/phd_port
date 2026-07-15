@@ -220,14 +220,16 @@ export default function HomePage() {
                 <span style={{ color: "#0E7C7B" }}>A Two-Pronged Approach</span>
               </h2>
               <p className="text-base leading-relaxed mb-4" style={{ color: "#475569" }}>
-                Imagine designing a molecular key that fits perfectly into a cancer cell&apos;s
-                protein lock — built atom by atom in the lab, then verified computationally
-                before synthesis even begins.
+                Imagine designing a molecular key that fits a cancer-related protein target,
+                then using computational chemistry to understand why it behaves the way it does.
               </p>
               <p className="text-base leading-relaxed mb-6" style={{ color: "#475569" }}>
-                Dr. Arshi&apos;s PhD research synthesised <strong>ten novel ruthenium complexes</strong> and
-                simultaneously modelled their electronic structure, reactivity, and protein-binding
-                affinity using DFT and molecular docking — a seamless loop of prediction and confirmation.
+                During my PhD, I synthesised <strong>ten novel ruthenium complexes</strong> and
+                investigated their electronic structure, reactivity, and protein-binding behaviour
+                using Density Functional Theory (DFT) and molecular docking. By integrating
+                experimental synthesis with computational analysis, I correlated structural features
+                with chemical and biological properties, providing mechanistic insights that guided
+                the interpretation of experimental results.
               </p>
               <Link href="/research" className="text-sm font-semibold" style={{ color: "#0E7C7B", fontFamily: "var(--font-space)" }}>
                 Read the full research story →
@@ -241,7 +243,7 @@ export default function HomePage() {
               <ul className="space-y-4">
                 {[
                   ["⚗️","Synthesise Ru(III) & half-sandwich Ru(II)–arene Schiff-base complexes"],
-                  ["🔬","Confirm structures by NMR, X-ray diffraction, FT-IR & UV-Vis"],
+                  ["🔬","Confirm structures by NMR, X-ray diffraction (where applicable), FT-IR & UV-Vis"],
                   ["💻","Model electronic properties via DFT (GAUSSIAN)"],
                   ["🎯","Predict binding via molecular docking (AutoDock / Discovery Studio)"],
                   ["📊","Establish SAR from combined computational & biological data"],

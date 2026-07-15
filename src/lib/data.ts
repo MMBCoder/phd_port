@@ -118,7 +118,7 @@ export const researchAreas = [
     icon: "💻",
     title: "Computational Drug Design",
     color: "emerald",
-    desc: "Applying DFT, HOMO–LUMO analysis, MEP mapping, and molecular docking to rationalise reactivity and predict binding affinities before bench synthesis.",
+    desc: "",
     techniques: ["GAUSSIAN (DFT)", "AutoDock / Discovery Studio", "HOMO–LUMO & MEP", "ADME Prediction"],
     pubId: 2,
   },
@@ -126,27 +126,27 @@ export const researchAreas = [
     icon: "⚗️",
     title: "Structure–Activity Relationships",
     color: "navy",
-    desc: "Correlating electronic structure, substituent patterns, and geometry with biological potency to establish predictive SAR models across 10+ complexes.",
-    techniques: ["SAR Analysis", "QSAR", "Substituent Effect Studies", "Binding Score Correlation"],
+    desc: "Correlating electronic structure, ligand substitution patterns, and molecular geometry with experimental biological activity to understand structure–activity relationships across a series of ruthenium complexes.",
+    techniques: ["SAR Analysis", "Electronic Descriptor Analysis", "Substituent Effect Studies", "Computational–Experimental Correlation"],
     pubId: 5,
   },
   {
     icon: "🔬",
     title: "Biological Evaluation",
     color: "teal",
-    desc: "Coordinating anticancer, antimycobacterial, antioxidant, and DNA-binding studies across partner laboratories and integrating results with computational predictions.",
+    desc: "Collaborating on anticancer, antimycobacterial, antioxidant, and DNA-binding studies and integrating the experimental findings with computational analyses to support mechanistic interpretation.",
     techniques: ["MTT Anticancer Assay", "MIC Antimycobacterial", "DPPH Antioxidant", "DNA Binding Fluorescence"],
     pubId: 4,
   },
 ];
 
 export const workflowSteps = [
-  { step: "01", label: "Design", desc: "Computational prediction of target binding and electronic properties via DFT / docking." },
+  { step: "01", label: "Molecular Design", desc: "Design Ru(III) and half-sandwich Ru(II)–arene Schiff-base complexes based on coordination chemistry principles and literature-guided ligand selection." },
   { step: "02", label: "Synthesis", desc: "Multistep organometallic synthesis of Ru(III) and half-sandwich Ru(II)–arene Schiff-base complexes." },
-  { step: "03", label: "Characterisation", desc: "¹H/¹³C NMR · FT-IR · UV-Vis · Single-crystal X-ray · CHNS elemental analysis." },
+  { step: "03", label: "Characterisation", desc: "¹H/¹³C NMR · FT-IR · UV-Vis · Single-crystal X-ray (where applicable) · CHNS elemental analysis." },
   { step: "04", label: "Computational Analysis", desc: "DFT geometry optimisation, HOMO–LUMO, MEP maps, and molecular docking in GAUSSIAN / AutoDock." },
   { step: "05", label: "Biological Evaluation", desc: "Anticancer, antimycobacterial, antioxidant assays; DNA binding kinetics via fluorescence." },
-  { step: "06", label: "Lead Optimisation", desc: "SAR analysis correlates substituent effects with potency to guide the next synthetic cycle." },
+  { step: "06", label: "Structure–Activity Interpretation", desc: "SAR analysis correlates substituent effects with potency to guide the next synthetic cycle." },
 ];
 
 export const skills = [
