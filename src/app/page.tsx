@@ -29,7 +29,7 @@ function ResearchCard({ icon, title, desc, techniques }: {
         <h3 className="font-bold text-lg mb-2" style={{ fontFamily: "var(--font-space)", color: "#0F172A" }}>
           {title}
         </h3>
-        <p className="text-sm leading-relaxed" style={{ color: "#64748B" }}>{desc}</p>
+        {desc && <p className="text-sm leading-relaxed" style={{ color: "#64748B" }}>{desc}</p>}
       </div>
       <div className="flex flex-wrap gap-2 mt-auto">
         {techniques.map((t) => (

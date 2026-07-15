@@ -160,15 +160,20 @@ export default function ExperiencePage() {
               Postdoctoral Interests
             </h2>
             <p className="text-base leading-relaxed mb-6" style={{ color: "#475569" }}>
-              Actively seeking a postdoctoral position bridging computational drug discovery with experimental validation — translating computational insights into viable metallodrug candidates through rational, structure-based design.
+              Seeking a postdoctoral position in computational and medicinal inorganic chemistry, with the goal of integrating predictive modelling, computational chemistry, and experimental validation to accelerate the discovery of metal-based therapeutics.
             </p>
+            <h3 className="font-semibold text-sm uppercase tracking-widest mb-4"
+              style={{ color: "#94A3B8", fontFamily: "var(--font-space)" }}>
+              Research Interests
+            </h3>
             <ul className="space-y-3 mb-8">
               {[
-                "In vivo behaviour and pharmacokinetics of metal-based therapeutic agents",
-                "Lead-compound optimisation and structure–activity refinement",
-                "Computational drug-discovery workflows for metal complexes",
-                "Metallodrug–biomolecule interaction studies",
-                "Machine learning applications in medicinal inorganic chemistry",
+                "Computational drug discovery for metal-based therapeutics",
+                "DFT-guided molecular design and experimental validation",
+                "Structure–activity relationship (SAR) and lead optimisation",
+                "Metallodrug–biomolecule interactions (proteins, DNA, and other biological targets)",
+                "In vivo behaviour, pharmacokinetics, and biodistribution of metal-based therapeutics",
+                "Machine learning and cheminformatics for medicinal inorganic chemistry",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "#475569" }}>
                   <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: "#0E7C7B" }} />

@@ -22,38 +22,6 @@ export default function ResearchPage() {
       desc: "Deep learning library for drug discovery and quantum chemistry. Applied for graph neural networks on molecular graphs, activity prediction, and ADMET modelling of ruthenium complex candidates.",
       uses: ["Graph conv models", "ADMET prediction", "Multitask learning", "Scaffold splits"],
     },
-    {
-      name: "OpenBabel",
-      category: "Format Conversion",
-      color: "#6366F1",
-      icon: "🔄",
-      desc: "Chemical toolbox for file-format interconversion between SMILES, SDF, MOL2, PDB, and XYZ. Essential for converting DFT-optimised geometries into docking-ready inputs.",
-      uses: ["Format conversion", "3D generation", "Protonation", "Energy minimisation"],
-    },
-    {
-      name: "ASE",
-      category: "Atomistic Simulation",
-      color: "#F59E0B",
-      icon: "⚛️",
-      desc: "Atomic Simulation Environment — Python interface to DFT codes including PySCF and VASP. Used for geometry optimisation, vibrational analysis, and ML force field training workflows.",
-      uses: ["Geometry opt", "PySCF interface", "NEB paths", "Vibrations"],
-    },
-    {
-      name: "PySCF",
-      category: "Quantum Chemistry",
-      color: "#EF4444",
-      icon: "🔬",
-      desc: "Python-based Simulations of Chemistry Framework. Used for DFT single-point energies, TDDFT excited-state calculations, population analysis (Mulliken, NBO), and reference data for ML force fields.",
-      uses: ["DFT energies", "TDDFT", "NBO analysis", "ML dataset gen"],
-    },
-    {
-      name: "PyTorch",
-      category: "Deep Learning",
-      color: "#F97316",
-      icon: "🔥",
-      desc: "Deep learning framework powering message-passing neural networks (MPNN) and equivariant GNNs for learning molecular potential energy surfaces and predicting biological activities of inorganic complexes.",
-      uses: ["GNN / MPNN", "Equivariant nets", "PES learning", "Activity models"],
-    },
   ];
 
   return (
@@ -162,7 +130,7 @@ export default function ResearchPage() {
                     style={{ fontFamily: "var(--font-space)", color: "#0F172A" }}>
                     {r.title}
                   </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: "#64748B" }}>{r.desc}</p>
+                  {r.desc && <p className="text-sm leading-relaxed" style={{ color: "#64748B" }}>{r.desc}</p>}
                 </div>
                 <div className="flex flex-wrap gap-1.5 mt-auto">
                   {r.techniques.map((t) => (
@@ -245,7 +213,7 @@ export default function ResearchPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
             {mlLibraries.map((lib) => (
               <div key={lib.name}
                 className="rounded-2xl border p-6 flex flex-col gap-4 hover:shadow-lg transition-all hover:-translate-y-1"
@@ -290,13 +258,9 @@ export default function ResearchPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
             {/* Steps */}
             <div>
-              <span className="text-xs font-semibold uppercase tracking-widest mb-3 block"
-                style={{ color: "#0E7C7B", fontFamily: "var(--font-space)" }}>
-                Applied ML
-              </span>
               <h2 className="font-bold mb-4"
                 style={{ fontFamily: "var(--font-space)", fontSize: "clamp(1.4rem,2.5vw,2rem)", color: "#fff" }}>
-                Virtual Screening Pipeline
+                Future Research Vision: AI-Driven Virtual Screening
               </h2>
               <p className="text-sm leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.55)" }}>
                 A five-step Python pipeline that takes a compound library from raw SMILES to
@@ -386,7 +350,7 @@ for mol in top50[:5]:
         </div>
       </section>
 
-      {/* ── ML Force Fields (Future) ── */}
+      {/* ── Multi-Agent AI (Future Vision) ── */}
       <section className="py-20" style={{ background: "#fff" }}>
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
@@ -399,46 +363,61 @@ for mol in top50[:5]:
                   <span className="w-3 h-3 rounded-full" style={{ background: "#f59e0b" }} />
                   <span className="w-3 h-3 rounded-full" style={{ background: "#22c55e" }} />
                   <span className="text-xs ml-2" style={{ color: "#94A3B8", fontFamily: "var(--font-ibm)" }}>
-                    mlff_train.py
+                    multi_agent_drug_design.py
                   </span>
                 </div>
                 <pre className="p-5 text-xs leading-relaxed overflow-x-auto"
                   style={{ background: "#0F172A", color: "rgba(255,255,255,0.82)", fontFamily: "var(--font-ibm)" }}>
-{`import torch
-from torch_geometric.data import Data
-from ase import Atoms
-from pyscf import gto, dft
+{`# Multi-agent orchestration for Ru complex discovery
+# Each agent handles one step of the PhD workflow
 
-# 1. Generate reference dataset (PySCF + ASE)
-def compute_dft_reference(xyz_file):
-    atoms  = Atoms.read(xyz_file)
-    mol    = gto.M(atom=ase_to_pyscf(atoms),
-                   basis="def2-TZVP", charge=1)
-    mf     = dft.RKS(mol)
-    mf.xc  = "B3LYP"
-    mf.run()
-    forces = mf.Gradients().kernel()
-    return mf.e_tot, forces
+class DesignAgent:
+    """Proposes new Ru–Schiff-base candidates via
+    RDKit enumeration and DeepChem activity scoring."""
+    def run(self, scaffold, substituents):
+        candidates = enumerate_complexes(scaffold,
+                                         substituents)
+        scores = deepchem_model.predict(candidates)
+        return rank_by_score(candidates, scores)
 
-# 2. Build PyG graph from molecule
-def mol_to_graph(atoms):
-    z    = torch.tensor(atoms.numbers, dtype=torch.long)
-    pos  = torch.tensor(atoms.positions, dtype=torch.float)
-    edge_index = radius_graph(pos, r=5.0)
-    return Data(z=z, pos=pos, edge_index=edge_index)
+class DFTAgent:
+    """Submits GAUSSIAN B3LYP/LANL2DZ jobs and
+    extracts HOMO-LUMO gap, MEP, and charge data."""
+    def run(self, candidate):
+        gjf = write_gaussian_input(candidate,
+              functional="B3LYP",
+              basis="LANL2DZ")
+        result = run_gaussian(gjf)
+        return parse_homo_lumo(result)
 
-# 3. Train equivariant MPNN (NequIP-style)
-class EquivNet(torch.nn.Module):
-    def __init__(self):
-        super().__init__()
-        self.embed = torch.nn.Embedding(118, 64)
-        self.conv  = EquivariantConv(64, 128, l_max=2)
-        self.out   = torch.nn.Linear(128, 1)
+class DockingAgent:
+    """Runs AutoDock Vina against PARP-1 / HSA
+    and returns predicted binding affinity (ΔG)."""
+    def run(self, candidate, receptor="PARP1"):
+        pdbqt = prepare_ligand(candidate)
+        out   = autodock_vina(pdbqt, receptor,
+                              exhaustiveness=16)
+        return parse_binding_energy(out)
 
-    def forward(self, data):
-        h = self.embed(data.z)
-        h = self.conv(h, data.pos, data.edge_index)
-        return self.out(h).sum()`}
+class SARAgent:
+    """Correlates DFT descriptors with docking
+    scores across the series; flags best leads."""
+    def run(self, series_data):
+        df = build_sar_table(series_data)
+        df["lead"] = (df["delta_g"] < -7.0) & \
+                     (df["homo_lumo_gap"] < 3.5)
+        return df[df["lead"]]
+
+# Orchestrator — mirrors the manual PhD workflow
+def discover_leads(scaffold, substituents):
+    candidates = DesignAgent().run(scaffold, substituents)
+    results = []
+    for c in candidates:
+        dft_data    = DFTAgent().run(c)
+        dock_data   = DockingAgent().run(c)
+        results.append({**dft_data, **dock_data})
+    leads = SARAgent().run(results)
+    return leads  # → shortlist for bench synthesis`}
                 </pre>
               </div>
             </div>
@@ -447,34 +426,36 @@ class EquivNet(torch.nn.Module):
             <div>
               <span className="text-xs font-semibold uppercase tracking-widest mb-3 block"
                 style={{ color: "#0E7C7B", fontFamily: "var(--font-space)" }}>
-                Future Research Direction
+                Future Research Vision
               </span>
               <h2 className="font-bold mb-4"
                 style={{ fontFamily: "var(--font-space)", fontSize: "clamp(1.4rem,2.5vw,2rem)", color: "#0F172A" }}>
-                Machine-Learned Force Fields
+                Multi-Agent AI for Computational Drug Design
               </h2>
               <p className="text-base leading-relaxed mb-4" style={{ color: "#475569" }}>
-                Classical force fields struggle with transition-metal complexes because standard
-                parameter sets were not designed for Ru–arene coordination bonds. My next research
-                direction is to train <strong>equivariant graph neural network (GNN) potentials</strong>
-                directly on DFT reference data generated with PySCF.
+                During my PhD, the workflow of designing a Ru complex, running DFT in GAUSSIAN,
+                docking in AutoDock, and extracting SAR insights was executed manually — one
+                compound at a time, each step requiring human handoff. A natural next step is to
+                orchestrate these same tasks as <strong>specialised AI agents</strong> that
+                communicate, share data, and iterate in parallel.
               </p>
               <p className="text-base leading-relaxed mb-6" style={{ color: "#475569" }}>
-                Using ASE as the simulation driver and PyTorch for model training, I aim to produce
-                transferable MLFFs that can run molecular dynamics on ruthenium complexes at
-                near-DFT accuracy but at a fraction of the cost — enabling microsecond timescale
-                simulations of drug–DNA interaction.
+                A <em>Design Agent</em> proposes new ligand combinations; a <em>DFT Agent</em>
+                submits and parses GAUSSIAN calculations; a <em>Docking Agent</em> scores each
+                candidate against target proteins; a <em>SAR Agent</em> synthesises the results
+                into ranked leads — delivering in hours what previously took weeks, and feeding
+                the best candidates directly to the bench.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
-                  { icon: "🎯", title: "Near-DFT Accuracy",
-                    desc: "Energies and forces within 1 meV/Å of B3LYP/def2-TZVP reference." },
-                  { icon: "⚡", title: "1000× Speed-up",
-                    desc: "MD feasible on ns–μs timescales, enabling aquation and binding simulations." },
-                  { icon: "🔗", title: "Transferability",
-                    desc: "One MLFF trained on Ru core chemistry, adaptable to new ligand combinations." },
-                  { icon: "🧬", title: "Drug–DNA Dynamics",
-                    desc: "Simulate covalent and non-covalent interactions of Ru complexes with B-DNA." },
+                  { icon: "⚡", title: "10–100× Faster Iteration",
+                    desc: "Parallel DFT jobs and automated docking replace sequential manual steps, compressing weeks into hours." },
+                  { icon: "🤖", title: "Automated SAR Analysis",
+                    desc: "The SAR Agent correlates electronic descriptors with binding affinity across the full series — no spreadsheet required." },
+                  { icon: "🎯", title: "Intelligent Lead Prioritisation",
+                    desc: "Agents rank candidates by HOMO–LUMO gap, docking ΔG, and ADME filters before a single milligram is synthesised." },
+                  { icon: "🔄", title: "Closed-Loop Design",
+                    desc: "Experimental results from the bench feed back into the Design Agent, continuously refining the next generation of candidates." },
                 ].map((item) => (
                   <div key={item.title} className="flex gap-3 p-4 rounded-xl border"
                     style={{ background: "#F8FAFC", borderColor: "#E2E8F0" }}>

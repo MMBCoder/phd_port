@@ -118,7 +118,7 @@ export const researchAreas = [
     icon: "💻",
     title: "Computational Drug Design",
     color: "emerald",
-    desc: "",
+    desc: "Applying DFT, HOMO–LUMO analysis, MEP mapping, and molecular docking to rationalise reactivity and predict binding affinities.",
     techniques: ["GAUSSIAN (DFT)", "AutoDock / Discovery Studio", "HOMO–LUMO & MEP", "ADME Prediction"],
     pubId: 2,
   },

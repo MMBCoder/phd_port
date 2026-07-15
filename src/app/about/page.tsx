@@ -220,7 +220,7 @@ export default function AboutPage() {
             Seeking a Postdoctoral Position
           </h2>
           <p className="text-base leading-relaxed mb-8 max-w-2xl mx-auto" style={{ color: "#475569" }}>
-            Actively seeking a postdoctoral role in computational or medicinal inorganic chemistry, bridging predictive modelling with experimental validation to advance metal-based therapeutics from concept to validated lead.
+            Seeking a postdoctoral position in computational and medicinal inorganic chemistry, with the goal of integrating predictive modelling, computational chemistry, and experimental validation to accelerate the discovery of metal-based therapeutics.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link href="/contact"
