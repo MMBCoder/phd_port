@@ -55,7 +55,7 @@ export default function AboutPage() {
                 ].map(({ icon, label }) => (
                   <div key={label} className="flex items-start gap-3 mb-3 last:mb-0">
                     <span className="text-base flex-shrink-0 mt-0.5">{icon}</span>
-                    <span className="text-xs leading-relaxed" style={{ color: "#475569", fontFamily: "var(--font-space)" }}>
+                    <span className="text-sm leading-relaxed" style={{ color: "#475569", fontFamily: "var(--font-space)" }}>
                       {label}
                     </span>
                   </div>
@@ -83,14 +83,14 @@ export default function AboutPage() {
                 style={{ fontFamily: "var(--font-space)", fontSize: "clamp(1.4rem,2.5vw,2rem)", color: "#0F172A" }}>
                 Who I Am
               </h2>
-              <p className="text-base leading-relaxed mb-4" style={{ color: "#475569" }}>
+              <p className="text-lg leading-relaxed mb-4" style={{ color: "#475569" }}>
                 I am an inorganic and medicinal chemist at the University of Lucknow, specialising in the design, synthesis, and biological evaluation of <strong>ruthenium-based anticancer and antimycobacterial agents</strong>. My research sits at the intersection of wet-lab organometallic chemistry and computational drug discovery.
               </p>
-              <p className="text-base leading-relaxed mb-4" style={{ color: "#475569" }}>
-                Every complex I synthesise undergoes a parallel computational study: DFT geometry optimisation and HOMO–LUMO analysis reveal the electronic landscape, MEP maps highlight reactive sites, and molecular docking estimates binding affinity inside target proteins. Lab results then validate — or challenge — the predictions.
+              <p className="text-lg leading-relaxed mb-4" style={{ color: "#475569" }}>
+                Every complex I synthesise undergoes a parallel computational study: <strong>DFT</strong> geometry optimisation and <strong>HOMO–LUMO analysis</strong> reveal the electronic landscape, <strong>MEP maps</strong> highlight reactive sites, and <strong>molecular docking</strong> estimates binding affinity inside target proteins. Lab results then validate — or challenge — the predictions.
               </p>
-              <p className="text-base leading-relaxed mb-6" style={{ color: "#475569" }}>
-                Beyond the bench, I am building expertise in <strong>Python-based computational chemistry</strong> — RDKit, DeepChem, ASE, PySCF, and PyTorch — with the goal of training machine-learned force fields and graph neural networks tailored to transition-metal complexes.
+              <p className="text-lg leading-relaxed mb-6" style={{ color: "#475569" }}>
+                Beyond the bench, I am building expertise in <strong>Python-based computational chemistry</strong> — RDKit and DeepChem — with the goal of applying machine learning to drug discovery for metal-based therapeutics.
               </p>
 
               {/* Stats strip */}
@@ -165,7 +165,7 @@ export default function AboutPage() {
                   <h3 className="font-semibold text-sm mb-2" style={{ color: "#fff", fontFamily: "var(--font-space)" }}>
                     {item.title}
                   </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
+                  <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.6)" }}>
                     {item.desc}
                   </p>
                 </div>
@@ -200,7 +200,7 @@ export default function AboutPage() {
                 </h3>
                 <p className="text-sm font-medium mt-0.5" style={{ color: "#475569" }}>{e.institution}</p>
                 {e.detail && (
-                  <p className="text-xs mt-2 leading-relaxed max-w-2xl" style={{ color: "#94A3B8" }}>{e.detail}</p>
+                  <p className="text-sm mt-2 leading-relaxed max-w-2xl" style={{ color: "#94A3B8" }}>{e.detail}</p>
                 )}
               </div>
             ))}
@@ -219,7 +219,7 @@ export default function AboutPage() {
             style={{ fontFamily: "var(--font-space)", fontSize: "clamp(1.5rem,3vw,2.25rem)", color: "#0F172A" }}>
             Seeking a Postdoctoral Position
           </h2>
-          <p className="text-base leading-relaxed mb-8 max-w-2xl mx-auto" style={{ color: "#475569" }}>
+          <p className="text-lg leading-relaxed mb-8 max-w-2xl mx-auto" style={{ color: "#475569" }}>
             Seeking a postdoctoral position in computational and medicinal inorganic chemistry, with the goal of integrating predictive modelling, computational chemistry, and experimental validation to accelerate the discovery of metal-based therapeutics.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">

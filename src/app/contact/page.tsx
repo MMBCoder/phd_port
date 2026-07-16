@@ -15,7 +15,7 @@ export default function ContactPage() {
             style={{ fontFamily: "var(--font-space)", fontSize: "clamp(2rem,4vw,3rem)", color: "#fff" }}>
             Get in Touch
           </h1>
-          <p className="text-base max-w-xl" style={{ color: "rgba(255,255,255,0.6)" }}>
+          <p className="text-lg max-w-xl leading-relaxed" style={{ color: "rgba(255,255,255,0.75)" }}>
             Open to postdoctoral opportunities, research collaborations, joint publications, and academic invitations.
           </p>
         </div>
@@ -41,7 +41,7 @@ export default function ContactPage() {
                     "Academic talks, seminars, and conference invitations",
                     "Industry research roles in CADD / drug discovery",
                   ].map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "#475569" }}>
+                    <li key={item} className="flex items-start gap-3 text-base" style={{ color: "#475569" }}>
                       <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0"
                         style={{ background: "#0E7C7B" }} />
                       {item}
@@ -68,12 +68,12 @@ export default function ContactPage() {
                     </span>
                     {href ? (
                       <a href={href} target="_blank" rel="noopener noreferrer"
-                        className="text-sm font-medium hover:opacity-80 transition-opacity"
+                        className="text-base font-medium hover:opacity-80 transition-opacity"
                         style={{ color: "#0E7C7B" }}>
                         {value}
                       </a>
                     ) : (
-                      <span className="text-sm" style={{ color: "#475569" }}>{value}</span>
+                      <span className="text-base" style={{ color: "#475569" }}>{value}</span>
                     )}
                   </div>
                 ))}
@@ -124,7 +124,7 @@ export default function ContactPage() {
                       Your Name
                     </label>
                     <input id="cf-name" type="text" name="name" placeholder="e.g. Prof. Smith" required
-                      className="w-full px-4 py-3 rounded-xl border text-sm outline-none transition-colors focus:border-teal-500"
+                      className="w-full px-4 py-3 rounded-xl border text-base outline-none transition-colors focus:border-teal-500"
                       style={{ borderColor: "#E2E8F0", color: "#0F172A", fontFamily: "var(--font-space)", background: "#F8FAFC" }} />
                   </div>
                   <div>
@@ -133,7 +133,7 @@ export default function ContactPage() {
                       Email Address
                     </label>
                     <input id="cf-email" type="email" name="email" placeholder="you@institution.edu" required
-                      className="w-full px-4 py-3 rounded-xl border text-sm outline-none transition-colors focus:border-teal-500"
+                      className="w-full px-4 py-3 rounded-xl border text-base outline-none transition-colors focus:border-teal-500"
                       style={{ borderColor: "#E2E8F0", color: "#0F172A", fontFamily: "var(--font-space)", background: "#F8FAFC" }} />
                   </div>
                   <div>
@@ -158,7 +158,7 @@ export default function ContactPage() {
                     }}>
                     Send Message
                   </button>
-                  <p className="text-xs" style={{ color: "#94A3B8" }}>
+                  <p className="text-sm" style={{ color: "#94A3B8" }}>
                     * This opens your default email client to send the message.
                   </p>
                 </form>

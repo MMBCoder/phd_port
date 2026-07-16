@@ -21,7 +21,7 @@ function ResearchCard({ icon, title, desc, techniques }: {
   return (
     <div className="rounded-2xl p-7 border flex flex-col gap-4 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
       style={{ background: "#fff", borderColor: "#E2E8F0" }}>
-      <div className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl"
+      <div className="w-14 h-14 rounded-xl flex items-center justify-center text-3xl"
         style={{ background: "rgba(14,124,123,0.08)" }}>
         {icon}
       </div>
@@ -29,11 +29,11 @@ function ResearchCard({ icon, title, desc, techniques }: {
         <h3 className="font-bold text-lg mb-2" style={{ fontFamily: "var(--font-space)", color: "#0F172A" }}>
           {title}
         </h3>
-        {desc && <p className="text-sm leading-relaxed" style={{ color: "#64748B" }}>{desc}</p>}
+        {desc && <p className="text-base leading-relaxed" style={{ color: "#64748B" }}>{desc}</p>}
       </div>
       <div className="flex flex-wrap gap-2 mt-auto">
         {techniques.map((t) => (
-          <span key={t} className="px-2.5 py-1 rounded-md text-xs font-medium"
+          <span key={t} className="px-3 py-1.5 rounded-lg text-sm font-medium"
             style={{ background: "rgba(14,124,123,0.08)", color: "#0E7C7B", fontFamily: "var(--font-space)" }}>
             {t}
           </span>
@@ -46,12 +46,12 @@ function ResearchCard({ icon, title, desc, techniques }: {
 function WorkflowStep({ step, label, desc }: { step: string; label: string; desc: string }) {
   return (
     <div className="flex flex-col items-center text-center">
-      <div className="w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold mb-3"
+      <div className="w-14 h-14 rounded-full flex items-center justify-center text-base font-bold mb-3"
         style={{ background: "#0E7C7B", color: "#fff", fontFamily: "var(--font-ibm)" }}>
         {step}
       </div>
-      <p className="font-semibold text-sm mb-1" style={{ fontFamily: "var(--font-space)", color: "#fff" }}>{label}</p>
-      <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>{desc}</p>
+      <p className="font-bold text-base mb-1" style={{ fontFamily: "var(--font-space)", color: "#fff" }}>{label}</p>
+      <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>{desc}</p>
     </div>
   );
 }
@@ -219,14 +219,14 @@ export default function HomePage() {
                 From Bench to Bits —{" "}
                 <span style={{ color: "#0E7C7B" }}>A Two-Pronged Approach</span>
               </h2>
-              <p className="text-base leading-relaxed mb-4" style={{ color: "#475569" }}>
+                      <p className="text-lg leading-relaxed mb-4" style={{ color: "#475569" }}>
                 Imagine designing a molecular key that fits a cancer-related protein target,
                 then using computational chemistry to understand why it behaves the way it does.
               </p>
-              <p className="text-base leading-relaxed mb-6" style={{ color: "#475569" }}>
+              <p className="text-lg leading-relaxed mb-6" style={{ color: "#475569" }}>
                 During my PhD, I synthesised <strong>ten novel ruthenium complexes</strong> and
                 investigated their electronic structure, reactivity, and protein-binding behaviour
-                using Density Functional Theory (DFT) and molecular docking. By integrating
+                using <strong>Density Functional Theory (DFT)</strong> and <strong>molecular docking</strong>. By integrating
                 experimental synthesis with computational analysis, I correlated structural features
                 with chemical and biological properties, providing mechanistic insights that guided
                 the interpretation of experimental results.
@@ -250,7 +250,7 @@ export default function HomePage() {
                 ].map(([icon, text]) => (
                   <li key={text as string} className="flex items-start gap-3">
                     <span className="text-lg flex-shrink-0">{icon}</span>
-                    <span className="text-sm leading-relaxed" style={{ color: "#475569" }}>{text}</span>
+                    <span className="text-base leading-relaxed" style={{ color: "#475569" }}>{text}</span>
                   </li>
                 ))}
               </ul>
@@ -322,10 +322,10 @@ export default function HomePage() {
             ))}
           </div>
           <div className="mt-10 text-center">
-            <p className="text-sm mb-4" style={{ color: "#64748B", fontFamily: "var(--font-ibm)" }}>
+                  <p className="text-base mb-4" style={{ color: "#64748B", fontFamily: "var(--font-ibm)" }}>
               5 peer-reviewed papers · 1 preprint · 25 citations · h-index 4
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all hover:scale-105"
+            <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-base font-semibold transition-all hover:scale-105"
               style={{ background: "#0E7C7B", color: "#fff", fontFamily: "var(--font-space)" }}>
               Open to Collaboration →
             </Link>

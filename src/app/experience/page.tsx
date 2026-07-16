@@ -14,7 +14,7 @@ export default function ExperiencePage() {
             style={{ fontFamily: "var(--font-space)", fontSize: "clamp(2rem,4vw,3rem)", color: "#fff" }}>
             Experience & Education
           </h1>
-          <p className="text-base max-w-2xl" style={{ color: "rgba(255,255,255,0.6)" }}>
+          <p className="text-lg max-w-2xl leading-relaxed" style={{ color: "rgba(255,255,255,0.75)" }}>
             Five-plus years of doctoral research in inorganic synthesis and computational chemistry, underpinned by formal training in CADD at India&apos;s premier drug-discovery institute.
           </p>
         </div>
@@ -49,7 +49,7 @@ export default function ExperiencePage() {
                 </div>
                 <ul className="space-y-2">
                   {e.bullets.map((b) => (
-                    <li key={b} className="flex items-start gap-2 text-sm" style={{ color: "#475569" }}>
+                    <li key={b} className="flex items-start gap-2 text-base" style={{ color: "#475569" }}>
                       <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: "#0E7C7B" }} />
                       {b}
                     </li>
@@ -84,7 +84,7 @@ export default function ExperiencePage() {
                   {e.degree}
                 </h3>
                 <p className="text-sm font-medium" style={{ color: "#475569" }}>{e.institution}</p>
-                {e.detail && <p className="text-xs mt-1 leading-relaxed" style={{ color: "#94A3B8" }}>{e.detail}</p>}
+                {e.detail && <p className="text-sm mt-1 leading-relaxed" style={{ color: "#94A3B8" }}>{e.detail}</p>}
               </div>
             ))}
           </div>
@@ -137,10 +137,10 @@ export default function ExperiencePage() {
                     {c.year}
                   </span>
                 </div>
-                <h3 className="font-semibold text-sm leading-snug mb-2" style={{ color: "#fff", fontFamily: "var(--font-space)" }}>
+                <h3 className="font-semibold text-base leading-snug mb-2" style={{ color: "#fff", fontFamily: "var(--font-space)" }}>
                   {c.title}
                 </h3>
-                <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>{c.org}</p>
+                <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>{c.org}</p>
               </div>
             ))}
           </div>
@@ -159,7 +159,7 @@ export default function ExperiencePage() {
               style={{ fontFamily: "var(--font-space)", fontSize: "clamp(1.4rem,2.5vw,2rem)", color: "#0F172A" }}>
               Postdoctoral Interests
             </h2>
-            <p className="text-base leading-relaxed mb-6" style={{ color: "#475569" }}>
+            <p className="text-lg leading-relaxed mb-6" style={{ color: "#475569" }}>
               Seeking a postdoctoral position in computational and medicinal inorganic chemistry, with the goal of integrating predictive modelling, computational chemistry, and experimental validation to accelerate the discovery of metal-based therapeutics.
             </p>
             <h3 className="font-semibold text-sm uppercase tracking-widest mb-4"
@@ -175,7 +175,7 @@ export default function ExperiencePage() {
                 "In vivo behaviour, pharmacokinetics, and biodistribution of metal-based therapeutics",
                 "Machine learning and cheminformatics for medicinal inorganic chemistry",
               ].map((item) => (
-                <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "#475569" }}>
+                <li key={item} className="flex items-start gap-3 text-base" style={{ color: "#475569" }}>
                   <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: "#0E7C7B" }} />
                   {item}
                 </li>

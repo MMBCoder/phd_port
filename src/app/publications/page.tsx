@@ -31,21 +31,21 @@ function PubCard({ pub }: { pub: (typeof publications)[0] }) {
       </div>
 
       <div>
-        <h3 className="font-bold leading-snug mb-2 text-base"
+        <h3 className="font-bold leading-snug mb-2 text-lg"
           style={{ fontFamily: "var(--font-space)", color: "#0F172A" }}>
           {pub.title}
         </h3>
-        <p className="text-sm font-medium mb-3" style={{ color: "#0E7C7B" }}>
+        <p className="text-base font-medium mb-3" style={{ color: "#0E7C7B" }}>
           {pub.journal}
         </p>
-        <p className="text-sm leading-relaxed" style={{ color: "#64748B" }}>
+        <p className="text-base leading-relaxed" style={{ color: "#64748B" }}>
           {pub.abstract}
         </p>
       </div>
 
       <div className="flex flex-wrap gap-1.5">
         {pub.topics.map((t) => (
-          <span key={t} className="px-2 py-0.5 rounded text-xs"
+          <span key={t} className="px-2.5 py-1 rounded text-sm"
             style={{ background: "#F1F5F9", color: "#475569", fontFamily: "var(--font-space)" }}>
             {t}
           </span>
@@ -54,12 +54,12 @@ function PubCard({ pub }: { pub: (typeof publications)[0] }) {
 
       <div className="flex items-center gap-3 pt-1 mt-auto flex-wrap">
         <a href={pub.doi} target="_blank" rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold transition-all hover:scale-105"
+          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold transition-all hover:scale-105"
           style={{ background: "#0E7C7B", color: "#fff", fontFamily: "var(--font-space)" }}>
           Read Paper ↗
         </a>
         <a href={pub.doi} target="_blank" rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 text-xs font-medium transition-colors hover:opacity-80"
+          className="inline-flex items-center gap-1 text-sm font-medium transition-colors hover:opacity-80"
           style={{ color: "#64748B", fontFamily: "var(--font-ibm)" }}>
           DOI: {pub.doiShort}
         </a>
@@ -89,7 +89,7 @@ export default function PublicationsPage() {
             style={{ fontFamily: "var(--font-space)", fontSize: "clamp(2rem,4vw,3rem)", color: "#fff" }}>
             Publications
           </h1>
-          <p className="text-base max-w-2xl" style={{ color: "rgba(255,255,255,0.6)" }}>
+          <p className="text-lg max-w-2xl leading-relaxed" style={{ color: "rgba(255,255,255,0.75)" }}>
             5 peer-reviewed articles across Q1/Q2 journals in inorganic, medicinal, and computational chemistry — plus 1 preprint.
           </p>
           <div className="flex items-center gap-6 mt-8 flex-wrap">
@@ -101,7 +101,7 @@ export default function PublicationsPage() {
             ].map(([n, l]) => (
               <div key={l}>
                 <p className="text-2xl font-bold" style={{ color: "#0E7C7B", fontFamily: "var(--font-ibm)" }}>{n}</p>
-                <p className="text-xs" style={{ color: "rgba(255,255,255,0.45)", fontFamily: "var(--font-space)" }}>{l}</p>
+                <p className="text-sm" style={{ color: "rgba(255,255,255,0.55)", fontFamily: "var(--font-space)" }}>{l}</p>
               </div>
             ))}
           </div>
