@@ -253,7 +253,7 @@ export default function PublicationsPage() {
             chemistry — plus 1 preprint and 1 book chapter.
           </p>
           <div className="flex items-center gap-6 mt-8 flex-wrap">
-            {([["26","Citations"],["4","H-Index"],["5","Journals"],["6","Total Works"]] as [string,string][]).map(([n,l]) => (
+            {([["26","Citations"],["4","H-Index"],["5","Publications"],["6","Total Works"]] as [string,string][]).map(([n,l]) => (
               <div key={l}>
                 <p className="text-2xl font-bold" style={{ color: "#0E7C7B", fontFamily: "var(--font-ibm)" }}>{n}</p>
                 <p className="text-sm" style={{ color: "rgba(255,255,255,0.55)", fontFamily: "var(--font-space)" }}>{l}</p>
