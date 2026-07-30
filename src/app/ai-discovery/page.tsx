@@ -332,13 +332,12 @@ export default function AIDiscoveryPage() {
             AI-Driven Discovery
           </h1>
           <p className="text-lg max-w-2xl leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.75)" }}>
-            Extending doctoral research into <strong style={{ color: "#4DD9D8" }}>Python-based cheminformatics</strong>,{" "}
-            <strong style={{ color: "#4DD9D8" }}>AI-assisted virtual screening</strong>, and{" "}
-            <strong style={{ color: "#4DD9D8" }}>multi-agent automation</strong> — building the next layer of computational methodology
+            Extending doctoral research into <strong style={{ color: "#4DD9D8" }}>Python-based cheminformatics</strong> and{" "}
+            <strong style={{ color: "#4DD9D8" }}>AI-assisted virtual screening</strong> for building the next layer of computational methodology
             for accelerated materials discovery.
           </p>
           <div className="flex flex-wrap gap-3">
-            {["RDKit · Cheminformatics", "DeepChem · Graph ML", "AI Virtual Screening", "Multi-Agent Orchestration"].map((tag) => (
+            {["RDKit · Cheminformatics", "DeepChem · Graph ML", "AI Virtual Screening"].map((tag) => (
               <span key={tag} className="px-3 py-1.5 rounded-lg text-xs font-medium border"
                 style={{ color: "rgba(255,255,255,0.7)", borderColor: "rgba(255,255,255,0.12)",
                          background: "rgba(255,255,255,0.05)", fontFamily: "var(--font-space)" }}>
