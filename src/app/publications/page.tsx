@@ -411,9 +411,7 @@ export default function PublicationsPage() {
             {/* Poster — ISCB 2025 */}
             <div className="rounded-2xl border flex flex-col overflow-hidden"
               style={{ background: "#fff", borderColor: "#E2E8F0" }}>
-              <div className="p-5 pb-0 flex justify-center" style={{ background: "rgba(14,124,123,0.03)" }}>
-                <PosterGraphic />
-              </div>
+              <div className="h-1.5 w-full" style={{ background: "linear-gradient(90deg,#0E7C7B,#4DD9D8)" }}/>
               <div className="p-6 flex flex-col gap-4 flex-1">
                 <div className="flex items-center gap-2 flex-wrap">
                   <span className="px-3 py-1 rounded-md text-xs font-semibold"
@@ -424,6 +422,10 @@ export default function PublicationsPage() {
                     style={{ background: "rgba(14,124,123,0.07)", color: "#0E7C7B", fontFamily: "var(--font-space)" }}>
                     Poster
                   </span>
+                </div>
+                <div className="rounded-xl p-4 flex items-center justify-center"
+                  style={{ background: "rgba(14,124,123,0.04)", border: "1px solid rgba(14,124,123,0.1)" }}>
+                  <PosterGraphic />
                 </div>
                 <div>
                   <h3 className="font-bold text-base leading-snug mb-2"
