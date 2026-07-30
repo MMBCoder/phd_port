@@ -516,7 +516,7 @@ export default function ResearchPage() {
         </div>
       </section>
 
-      {/* Research Workflow */}
+      {/* Doctorate Research Workflow */}
       <section className="py-20" style={{ background: "#071A2D" }}>
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14">
@@ -526,7 +526,7 @@ export default function ResearchPage() {
             </span>
             <h2 className="font-bold"
               style={{ fontFamily: "var(--font-space)", fontSize: "clamp(1.5rem,3vw,2.25rem)", color: "#fff" }}>
-              Research Workflow
+              Doctorate Research Workflow
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">

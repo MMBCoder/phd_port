@@ -94,7 +94,7 @@ export default function PublicationsPage() {
           </p>
           <div className="flex items-center gap-6 mt-8 flex-wrap">
             {[
-              ["25+", "Citations"],
+              ["26", "Citations"],
               ["4",   "H-Index"],
               ["5",   "Journals"],
               ["6",   "Total Works"],

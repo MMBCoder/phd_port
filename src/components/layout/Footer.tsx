@@ -52,6 +52,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {[
                 ["ORCID", profile.links.orcid],
+                ["Scopus", profile.links.scopus],
                 ["Google Scholar", profile.links.scholar],
                 ["ResearchGate", profile.links.researchgate],
                 ["LinkedIn", profile.links.linkedin],
@@ -73,10 +74,16 @@ export default function Footer() {
           <p className="text-xs" style={{ color: "rgba(255,255,255,0.3)", fontFamily: "var(--font-space)" }}>
             © 2026 Dr. Farha Arshi · Lucknow, India
           </p>
-          <a href={profile.links.orcid} target="_blank" rel="noopener noreferrer"
-             className="text-xs" style={{ color: "rgba(255,255,255,0.3)", fontFamily: "var(--font-ibm)" }}>
-            ORCID 0000-0002-2891-5697
-          </a>
+          <div className="flex items-center gap-4 flex-wrap justify-center sm:justify-end">
+            <a href={profile.links.orcid} target="_blank" rel="noopener noreferrer"
+               className="text-xs" style={{ color: "rgba(255,255,255,0.3)", fontFamily: "var(--font-ibm)" }}>
+              ORCID 0000-0002-2891-5697
+            </a>
+            <a href={profile.links.scopus} target="_blank" rel="noopener noreferrer"
+               className="text-xs" style={{ color: "rgba(255,255,255,0.3)", fontFamily: "var(--font-ibm)" }}>
+              Scopus 57918278300
+            </a>
+          </div>
         </div>
       </div>
     </footer>

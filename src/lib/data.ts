@@ -1,7 +1,7 @@
 export const profile = {
   name: "Dr. Farha Arshi",
-  title: "Synthetic & Computational Chemist",
-  tagline: "Advancing Metal-Based Anticancer Therapeutics Through Molecular Design",
+  title: "Synthetic, Computational & AI-Driven Chemist",
+  tagline: "Accelerating advanced materials discovery through molecular design and artificial intelligence",
   bio: "Inorganic and medicinal chemist specialising in ruthenium-based metallodrugs, uniting hands-on organometallic synthesis with computational design (DFT, molecular docking, ADME). Seeking a postdoctoral role applying structure-based computational design to advance metal-based therapeutic candidates from prediction toward validated leads.",
   email: "farhaarshi02@gmail.com",
   location: "Lucknow, Uttar Pradesh, India",
@@ -11,14 +11,15 @@ export const profile = {
     linkedin:    "https://linkedin.com/in/farha-arshi-7b2131173",
     researchgate:"https://researchgate.net/profile/Farha-Arshi",
     scholar:     "https://scholar.google.com/citations?user=JAw7WC4AAAAJ",
+    scopus:      "https://www.scopus.com/authid/detail.uri?authorId=57918278300",
   },
   cv: "/Farha_Arshi_CV_New.pdf",
 };
 
 export const stats = [
-  { value: 10,  label: "Ru Complexes",  suffix: "+" },
-  { value: 5,   label: "Publications",  suffix: "+" },
-  { value: 25,  label: "Citations",     suffix: "+" },
+  { value: 10,  label: "Ru Complexes",  suffix: "" },
+  { value: 5,   label: "Publications",  suffix: "" },
+  { value: 26,  label: "Citations",     suffix: "" },
   { value: 4,   label: "H-Index",       suffix: ""  },
   { value: 3,   label: "Conferences",   suffix: ""  },
   { value: 5,   label: "Years Research",suffix: "+" },
@@ -108,7 +109,7 @@ export const publications = [
 export const researchAreas = [
   {
     icon: "🧬",
-    title: "Ruthenium Metallodrugs",
+    title: "Ruthenium Chemistry",
     color: "teal",
     desc: "Designing Ru(III) and half-sandwich Ru(II)–arene complexes as next-generation anticancer and antimycobacterial agents with selectivity advantages over cisplatin.",
     techniques: ["Organometallic Synthesis", "NMR / X-ray Diffraction", "DNA Binding Studies", "Anticancer Assays"],
@@ -167,7 +168,7 @@ export const education = [
   {
     period: "2016 – 2018",
     degree: "M.Sc., Chemistry",
-    institution: "Isabella Thoburn Degree College, Lucknow",
+    institution: "University of Lucknow",
     detail: "",
   },
   {
@@ -187,7 +188,7 @@ export const education = [
 export const experience = [
   {
     period: "Dec 2020 – Jan 2026",
-    role: "Doctoral Researcher — Inorganic & Medicinal Chemistry",
+    role: "Doctoral Researcher — Inorganic & AI Assisted Materials",
     org: "University of Lucknow, India",
     bullets: [
       "Built a structurally diverse library of ten Ru(III) and half-sandwich Ru–arene Schiff-base complexes as anticancer and antimycobacterial candidates.",

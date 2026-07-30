@@ -50,9 +50,18 @@ function ResearchGateSVG() {
   );
 }
 
+function ScopusSVG() {
+  return (
+    <svg viewBox="0 0 24 24" width="17" height="17" fill="white" aria-hidden="true">
+      <text x="2" y="18" fontSize="18" fontWeight="900" fontFamily="Arial, sans-serif">S</text>
+    </svg>
+  );
+}
+
 const socialLinks = [
   { href: profile.links.linkedin,     Icon: LinkedInSVG,      bg: "#0A66C2", title: "LinkedIn" },
   { href: profile.links.orcid,        Icon: OrcidSVG,         bg: "#A6CE39", title: "ORCID" },
+  { href: profile.links.scopus,       Icon: ScopusSVG,        bg: "#E9711C", title: "Scopus" },
   { href: profile.links.scholar,      Icon: ScholarSVG,       bg: "#4285F4", title: "Google Scholar" },
   { href: profile.links.researchgate, Icon: ResearchGateSVG,  bg: "#00CCBB", title: "ResearchGate" },
 ];

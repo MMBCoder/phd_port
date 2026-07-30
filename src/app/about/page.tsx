@@ -114,9 +114,10 @@ export default function AboutPage() {
                 style={{ color: "#94A3B8", fontFamily: "var(--font-space)" }}>
                 Academic Profiles
               </h3>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 {[
                   { label: "ORCID",          href: profile.links.orcid,        icon: "🆔" },
+                  { label: "Scopus",         href: profile.links.scopus,       icon: "S"  },
                   { label: "Google Scholar", href: profile.links.scholar,      icon: "🎓" },
                   { label: "ResearchGate",   href: profile.links.researchgate, icon: "📄" },
                   { label: "LinkedIn",       href: profile.links.linkedin,     icon: "🔗" },
@@ -124,7 +125,12 @@ export default function AboutPage() {
                   <a key={label} href={href} target="_blank" rel="noopener noreferrer"
                     className="flex items-center gap-2.5 px-4 py-3 rounded-xl border text-sm font-medium transition-all hover:shadow-sm hover:-translate-y-0.5"
                     style={{ background: "#F8FAFC", borderColor: "#E2E8F0", color: "#0F172A", fontFamily: "var(--font-space)" }}>
-                    <span>{icon}</span>
+                    {label === "Scopus" ? (
+                      <span className="w-5 h-5 rounded flex items-center justify-center text-xs font-black flex-shrink-0"
+                        style={{ background: "#E9711C", color: "#fff" }}>S</span>
+                    ) : (
+                      <span>{icon}</span>
+                    )}
                     {label}
                   </a>
                 ))}

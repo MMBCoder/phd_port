@@ -95,8 +95,8 @@ export default function HomePage() {
             {/* Left */}
             <div className="flex flex-col gap-6">
               <div className="flex flex-wrap gap-2">
-                <Tag label="Structure-Based Drug Design" />
-                <Tag label="Ruthenium Metallodrugs" color="emerald" />
+                <Tag label="Advanced Material" />
+                <Tag label="Ruthenium Chemistry" color="emerald" />
               </div>
               <div>
                 <h1 className="font-bold leading-tight mb-4"
@@ -111,7 +111,7 @@ export default function HomePage() {
                 </p>
               </div>
               <div className="flex flex-wrap gap-2">
-                {["Computational Chemistry","Medicinal Chemistry","DFT Modelling","Molecular Docking"].map((t) => (
+                {["Computational Chemistry","AI Assisted Materials","DFT Modelling","Molecular Docking"].map((t) => (
                   <span key={t} className="px-3 py-1.5 rounded-lg text-xs font-medium border"
                     style={{ color: "rgba(255,255,255,0.7)", borderColor: "rgba(255,255,255,0.12)",
                              background: "rgba(255,255,255,0.05)", fontFamily: "var(--font-space)" }}>
@@ -288,7 +288,7 @@ export default function HomePage() {
             </span>
             <h2 className="font-bold"
               style={{ fontFamily: "var(--font-space)", fontSize: "clamp(1.5rem,3vw,2.25rem)", color: "#fff" }}>
-              Research Workflow
+              Doctorate Research Workflow
             </h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
@@ -323,7 +323,7 @@ export default function HomePage() {
           </div>
           <div className="mt-10 text-center">
                   <p className="text-base mb-4" style={{ color: "#64748B", fontFamily: "var(--font-ibm)" }}>
-              5 peer-reviewed papers · 1 preprint · 25 citations · h-index 4
+              5 peer-reviewed papers · 1 preprint · 26 citations · h-index 4
             </p>
             <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-base font-semibold transition-all hover:scale-105"
               style={{ background: "#0E7C7B", color: "#fff", fontFamily: "var(--font-space)" }}>
