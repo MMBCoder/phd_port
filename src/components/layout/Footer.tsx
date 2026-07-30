@@ -32,7 +32,7 @@ export default function Footer() {
               Navigation
             </p>
             <ul className="space-y-2">
-              {[["Home","/"],["About","/about"],["Research","/research"],["Publications","/publications"],["Experience","/experience"],["Contact","/contact"]].map(([l,h]) => (
+              {[["Home","/"],["About","/about"],["Research","/research"],["AI & Discovery","/ai-discovery"],["Publications","/publications"],["Experience","/experience"],["Contact","/contact"]].map(([l,h]) => (
                 <li key={h}>
                   <Link href={h} className="text-sm transition-colors hover:text-teal-400"
                     style={{ color: "rgba(255,255,255,0.55)", fontFamily: "var(--font-space)" }}>
