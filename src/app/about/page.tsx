@@ -17,7 +17,7 @@ export default function AboutPage() {
             Dr. Farha Arshi
           </h1>
           <p className="text-base max-w-xl" style={{ color: "rgba(255,255,255,0.6)" }}>
-            Synthetic &amp; Computational Chemist · Ruthenium Metallodrug Design
+            Synthetic, Computational &amp; AI-Driven Chemist
           </p>
         </div>
       </section>
@@ -47,10 +47,10 @@ export default function AboutPage() {
                   Quick Facts
                 </h3>
                 {[
-                  { icon: "📍", label: profile.location },
-                  { icon: "🎓", label: "Ph.D., Chemistry — University of Lucknow" },
-                  { icon: "🔬", label: "Ruthenium Metallodrug Research" },
-                  { icon: "💻", label: "DFT · Molecular Docking · ML/CADD" },
+                  { icon: "🎓", label: "Ph.D. in Chemistry — University of Lucknow" },
+                  { icon: "🧪", label: "Synthetic & Computational Chemistry" },
+                  { icon: "🧠", label: "DFT • Computational Materials Design • AI for Molecular Discovery" },
+                  { icon: "💻", label: "Python • RDKit • Molecular Modelling" },
                   { icon: "📧", label: profile.email },
                 ].map(({ icon, label }) => (
                   <div key={label} className="flex items-start gap-3 mb-3 last:mb-0">
@@ -90,7 +90,7 @@ export default function AboutPage() {
                 Every complex I synthesise undergoes a parallel computational study: <strong>DFT</strong> geometry optimisation and <strong>HOMO–LUMO analysis</strong> reveal the electronic landscape, <strong>MEP maps</strong> highlight reactive sites, and <strong>molecular docking</strong> estimates binding affinity inside target proteins. Lab results then validate — or challenge — the predictions.
               </p>
               <p className="text-lg leading-relaxed mb-6" style={{ color: "#475569" }}>
-                Beyond the bench, I am building expertise in <strong>Python-based computational chemistry</strong> — RDKit and DeepChem — with the goal of applying machine learning to drug discovery for metal-based therapeutics.
+                Beyond the bench, I am developing expertise in <strong>Python-based computational chemistry</strong>, including RDKit and AI-driven molecular design, with the long-term goal of combining machine learning and <strong>density functional theory</strong> to accelerate the discovery of advanced materials for sustainable technologies.
               </p>
 
               {/* Stats strip */}
@@ -140,43 +140,132 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Research philosophy */}
+      {/* Research Philosophy */}
       <section className="py-20" style={{ background: "#071A2D" }}>
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-            <div className="lg:col-span-1">
-              <span className="text-xs font-semibold uppercase tracking-widest mb-3 block"
-                style={{ color: "#0E7C7B", fontFamily: "var(--font-space)" }}>
-                Philosophy
-              </span>
-              <h2 className="font-bold"
-                style={{ fontFamily: "var(--font-space)", fontSize: "clamp(1.4rem,2.5vw,2rem)", color: "#fff" }}>
-                How I Approach Research
-              </h2>
-            </div>
-            <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {[
-                { icon: "🔄", title: "Computation → Synthesis Loop",
-                  desc: "Design is computational first; the bench validates or redirects the model. Iteration is the engine of discovery." },
-                { icon: "🎯", title: "Target-Aware Design",
-                  desc: "Every complex is designed with a biological target in mind, using docking scores and binding-site complementarity to guide ligand choice." },
-                { icon: "📊", title: "Data-Driven SAR",
-                  desc: "Systematic substituent variation across a series, correlated with computed and measured properties, to extract transferable design rules." },
-                { icon: "🤝", title: "Collaborative Evaluation",
-                  desc: "Biological assays — anticancer, antimycobacterial, antioxidant — are run with partner labs to ensure rigorous, independent validation." },
-              ].map((item) => (
-                <div key={item.title} className="rounded-2xl p-6 border"
-                  style={{ background: "rgba(255,255,255,0.03)", borderColor: "rgba(14,124,123,0.18)" }}>
-                  <span className="text-2xl mb-3 block">{item.icon}</span>
-                  <h3 className="font-semibold text-sm mb-2" style={{ color: "#fff", fontFamily: "var(--font-space)" }}>
+          {/* Section header */}
+          <div className="text-center mb-14">
+            <span className="text-xs font-semibold uppercase tracking-widest mb-3 block"
+              style={{ color: "#0E7C7B", fontFamily: "var(--font-space)" }}>
+              Research Philosophy
+            </span>
+            <h2 className="font-bold mb-3"
+              style={{ fontFamily: "var(--font-space)", fontSize: "clamp(1.5rem,3vw,2.25rem)", color: "#fff" }}>
+              How I Think About Discovery
+            </h2>
+            <p className="text-base max-w-xl mx-auto" style={{ color: "rgba(255,255,255,0.5)" }}>
+              Four principles that guide the integration of computation, AI, and experiment in my research.
+            </p>
+          </div>
+
+          {/* 4-card grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {[
+              {
+                icon: "🔄",
+                accent: "#0E7C7B",
+                accentBg: "rgba(14,124,123,0.12)",
+                title: "Predictive Materials Discovery",
+                desc: "Integrating DFT, cheminformatics, and artificial intelligence to identify high-potential functional materials before laboratory synthesis.",
+                tags: ["DFT", "Cheminformatics", "AI Screening"],
+                visual: (
+                  <svg viewBox="0 0 80 40" width="80" height="40" aria-hidden="true">
+                    <circle cx="10" cy="20" r="6" fill="none" stroke="#0E7C7B" strokeWidth="1.5" opacity="0.6"/>
+                    <circle cx="40" cy="20" r="9" fill="none" stroke="#0E7C7B" strokeWidth="1.5" opacity="0.8"/>
+                    <circle cx="70" cy="20" r="6" fill="none" stroke="#4DD9D8" strokeWidth="1.5" opacity="0.6"/>
+                    <line x1="16" y1="20" x2="31" y2="20" stroke="#0E7C7B" strokeWidth="1" opacity="0.5" strokeDasharray="3,2"/>
+                    <line x1="49" y1="20" x2="64" y2="20" stroke="#4DD9D8" strokeWidth="1" opacity="0.5" strokeDasharray="3,2"/>
+                    <circle cx="40" cy="20" r="3" fill="#0E7C7B" opacity="0.9"/>
+                  </svg>
+                ),
+              },
+              {
+                icon: "⚛️",
+                accent: "#6366F1",
+                accentBg: "rgba(99,102,241,0.1)",
+                title: "Computation-Informed Synthesis",
+                desc: "Using computational insights to guide synthesis, characterisation, and iterative optimisation of advanced materials.",
+                tags: ["Molecular Modelling", "GAUSSIAN", "Iterative Design"],
+                visual: (
+                  <svg viewBox="0 0 80 40" width="80" height="40" aria-hidden="true">
+                    <ellipse cx="40" cy="20" rx="30" ry="10" fill="none" stroke="#6366F1" strokeWidth="1.2" opacity="0.5"/>
+                    <ellipse cx="40" cy="20" rx="30" ry="10" fill="none" stroke="#6366F1" strokeWidth="1.2" opacity="0.5" transform="rotate(60 40 20)"/>
+                    <ellipse cx="40" cy="20" rx="30" ry="10" fill="none" stroke="#818CF8" strokeWidth="1.2" opacity="0.5" transform="rotate(120 40 20)"/>
+                    <circle cx="40" cy="20" r="4" fill="#6366F1" opacity="0.9"/>
+                  </svg>
+                ),
+              },
+              {
+                icon: "📊",
+                accent: "#F59E0B",
+                accentBg: "rgba(245,158,11,0.1)",
+                title: "Structure–Property Intelligence",
+                desc: "Connecting electronic structure, molecular descriptors, and experimental data to build predictive models for materials performance.",
+                tags: ["SAR Analysis", "HOMO–LUMO", "Descriptors"],
+                visual: (
+                  <svg viewBox="0 0 80 40" width="80" height="40" aria-hidden="true">
+                    {[10,20,32,46,58,70].map((x, i) => (
+                      <rect key={x} x={x} y={40 - [12,22,16,30,20,26][i]} width="8" height={[12,22,16,30,20,26][i]}
+                        fill="#F59E0B" opacity={0.3 + i * 0.1} rx="2"/>
+                    ))}
+                    <polyline points="14,28 24,18 36,24 50,10 62,20 74,14"
+                      fill="none" stroke="#F59E0B" strokeWidth="1.5" opacity="0.9"/>
+                  </svg>
+                ),
+              },
+              {
+                icon: "🌍",
+                accent: "#22C55E",
+                accentBg: "rgba(34,197,94,0.1)",
+                title: "Sustainable Materials Innovation",
+                desc: "Developing computational strategies that accelerate the discovery of functional materials for energy, environmental sustainability, and critical resource recovery.",
+                tags: ["Green Chemistry", "Energy Materials", "Sustainability"],
+                visual: (
+                  <svg viewBox="0 0 80 40" width="80" height="40" aria-hidden="true">
+                    <circle cx="40" cy="20" r="16" fill="none" stroke="#22C55E" strokeWidth="1.2" opacity="0.4"/>
+                    <path d="M40 4 Q55 12 55 20 Q55 28 40 36 Q25 28 25 20 Q25 12 40 4Z"
+                      fill="none" stroke="#22C55E" strokeWidth="1.2" opacity="0.6"/>
+                    <path d="M24 20 Q40 10 56 20" fill="none" stroke="#22C55E" strokeWidth="1" opacity="0.5" strokeDasharray="3,2"/>
+                    <circle cx="40" cy="20" r="3.5" fill="#22C55E" opacity="0.9"/>
+                  </svg>
+                ),
+              },
+            ].map((item) => (
+              <div key={item.title} className="relative rounded-2xl overflow-hidden border"
+                style={{ background: "rgba(255,255,255,0.02)", borderColor: `${item.accent}30` }}>
+                {/* Accent top bar */}
+                <div className="h-1 w-full" style={{ background: `linear-gradient(90deg, ${item.accent}, transparent)` }} />
+                <div className="p-7">
+                  {/* Icon + visual row */}
+                  <div className="flex items-center justify-between mb-5">
+                    <div className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl flex-shrink-0"
+                      style={{ background: item.accentBg }}>
+                      {item.icon}
+                    </div>
+                    <div className="opacity-70">{item.visual}</div>
+                  </div>
+                  {/* Title */}
+                  <h3 className="font-bold text-base mb-3"
+                    style={{ color: "#fff", fontFamily: "var(--font-space)" }}>
                     {item.title}
                   </h3>
-                  <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.6)" }}>
+                  {/* Description */}
+                  <p className="text-base leading-relaxed mb-5"
+                    style={{ color: "rgba(255,255,255,0.6)" }}>
                     {item.desc}
                   </p>
+                  {/* Keyword tags */}
+                  <div className="flex flex-wrap gap-2">
+                    {item.tags.map((tag) => (
+                      <span key={tag} className="px-2.5 py-1 rounded-md text-xs font-semibold"
+                        style={{ background: item.accentBg, color: item.accent, fontFamily: "var(--font-space)" }}>
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
