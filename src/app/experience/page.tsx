@@ -283,14 +283,9 @@ export default function ExperiencePage() {
             style={{ fontFamily: "var(--font-space)", fontSize: "clamp(1.4rem,2.5vw,2rem)", color: "#0F172A" }}>
             Skills & Tools
           </h2>
-          <div className="flex flex-wrap gap-3">
-            {skills.map((s) => (
-              <span key={s} className="px-4 py-2 rounded-xl text-sm font-medium border hover:shadow-sm transition-all hover:-translate-y-0.5"
-                style={{ background: "#fff", borderColor: "#E2E8F0", color: "#0F172A", fontFamily: "var(--font-space)" }}>
-                {s}
-              </span>
-            ))}
-          </div>
+          <p className="text-base leading-relaxed" style={{ color: "#475569", fontFamily: "var(--font-space)" }}>
+            Density Functional Theory (Gaussian) • Quantum Chemical Modelling • Electronic Structure Analysis • Molecular Modelling • Molecular Docking (AutoDock) • Discovery Studio • RDKit • Python • Cheminformatics • SMILES Processing • Organometallic Synthesis • Coordination Chemistry • Schiff-Base Ligand Design • Ruthenium Coordination Complexes • ¹H NMR • ¹³C NMR • FT-IR Spectroscopy • UV–Visible Spectroscopy • Single-Crystal X-ray Diffraction • CHNS Elemental Analysis • ADME Prediction • QSAR • Structure–Activity Relationship (SAR) • Scientific Writing • Peer-Reviewed Publishing • Research Mentoring
+          </p>
         </div>
       </section>
 

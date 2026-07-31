@@ -280,12 +280,12 @@ function DeepChemGraphic() {
 export default function AIDiscoveryPage() {
 
   const funnelStages = [
-    { type: "library",  label: "Compound Library",      count: "10,000+", note: "All candidate Ru–Schiff-base structures",      color: "#94A3B8", pct: 100 },
-    { type: "filter",   label: "Drug-Likeness Filter",   count: "~3,000",  note: "Pass molecular weight & lipophilicity rules",   color: "#6366F1", pct: 82  },
-    { type: "ai",       label: "AI Similarity Ranking",  count: "Top 200", note: "Most similar to known active Ru complexes",     color: "#F59E0B", pct: 62  },
-    { type: "docking",  label: "Molecular Docking",      count: "Top 20",  note: "Strongest predicted protein binding (ΔG)",      color: "#EF4444", pct: 40  },
-    { type: "dft",      label: "DFT Validation",         count: "5 leads", note: "HOMO–LUMO & electronic structure verified",     color: "#0E7C7B", pct: 22  },
-    { type: "synthesis",label: "Ready for Synthesis",    count: "Best 2–3",note: "Shortlisted for the wet lab",                   color: "#22C55E", pct: 10  },
+    { type: "library",  label: "Candidate Materials Library",     count: "10,000+",       note: "Virtual library of metal–ligand systems and functional nanomaterials",                                                       color: "#94A3B8", pct: 100 },
+    { type: "dft",      label: "Descriptor Generation",           count: "~3,000",        note: "Generate DFT-derived electronic descriptors: HOMO–LUMO energies, electrostatic potential surfaces, charge distribution",       color: "#6366F1", pct: 82  },
+    { type: "ai",       label: "AI Property Prediction",          count: "Top 200",       note: "Machine learning models predict structure–property relationships, selectivity, stability, and functional performance",          color: "#F59E0B", pct: 62  },
+    { type: "docking",  label: "High-Fidelity DFT Validation",    count: "Top 20",        note: "Perform high-accuracy DFT calculations to validate electronic structure, stability, and key material properties",               color: "#EF4444", pct: 40  },
+    { type: "filter",   label: "Experimental Validation",         count: "Top 5",         note: "Synthesize and characterize the highest-ranked candidates to verify computational predictions and generate new training data",   color: "#0E7C7B", pct: 22  },
+    { type: "synthesis",label: "Functional Materials",            count: "Best 2–3",      note: "Validated materials for selective metal-ion sensing, critical metal recovery, and sustainable environmental applications",       color: "#22C55E", pct: 10  },
   ] as const;
 
   const agents = [
@@ -361,8 +361,7 @@ export default function AIDiscoveryPage() {
               Machine Learning &amp; Python Libraries
             </h2>
             <p className="text-base max-w-2xl mx-auto leading-relaxed" style={{ color: "#64748B" }}>
-              Python-based open-source ecosystem for computational chemistry, cheminformatics,
-              and machine learning — applied to metallodrug research and advanced materials discovery.
+              Python-based tools supporting computational chemistry, cheminformatics, and AI-assisted materials discovery through molecular representation, descriptor generation, and computational workflow development.
             </p>
           </div>
 
@@ -392,12 +391,11 @@ export default function AIDiscoveryPage() {
                   </div>
                 </div>
                 <p className="text-base leading-relaxed mb-4" style={{ color: "#475569" }}>
-                  Industry-standard Python library for cheminformatics. Used for molecule parsing (SMILES/SDF),
-                  fingerprint generation (Morgan, MACCS), substructure search, and property prediction
-                  in virtual screening pipelines.
+                  An open-source Python toolkit for cheminformatics used to process molecular structures, generate descriptors and fingerprints, perform substructure searches, and prepare molecular libraries for computational modelling and machine learning.
                 </p>
+                <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: "#94A3B8", fontFamily: "var(--font-space)" }}>Applications</p>
                 <div className="flex flex-wrap gap-2">
-                  {["SMILES parsing", "Morgan fingerprints", "Property filters", "SAR analysis"].map((u) => (
+                  {["SMILES/SDF parsing", "Molecular descriptor generation", "Morgan & MACCS fingerprints", "Substructure searching", "Molecular property calculations", "Virtual library preparation"].map((u) => (
                     <span key={u} className="px-3 py-1.5 rounded-lg text-sm font-medium"
                       style={{ background: "#F1F5F9", color: "#64748B", fontFamily: "var(--font-ibm)" }}>
                       {u}
@@ -428,20 +426,22 @@ export default function AIDiscoveryPage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-bold text-xl" style={{ fontFamily: "var(--font-space)", color: "#0F172A" }}>DeepChem</h3>
+                    <div>
+                      <h3 className="font-bold text-xl" style={{ fontFamily: "var(--font-space)", color: "#0F172A" }}>DeepChem</h3>
+                      <p className="text-xs" style={{ color: "#94A3B8", fontFamily: "var(--font-space)" }}>Learning &amp; Research Interest</p>
+                    </div>
                     <span className="px-2.5 py-0.5 rounded text-xs font-semibold"
                       style={{ background: "rgba(34,197,94,0.1)", color: "#22C55E", fontFamily: "var(--font-space)" }}>
-                      ML / Drug Discovery
+                      Machine Learning for Chemistry
                     </span>
                   </div>
                 </div>
                 <p className="text-base leading-relaxed mb-4" style={{ color: "#475569" }}>
-                  Deep learning library for drug discovery and quantum chemistry. Applied for graph neural
-                  networks on molecular graphs, activity prediction, and ADMET modelling of
-                  ruthenium complex candidates.
+                  Exploring DeepChem for developing machine learning models that predict molecular and materials properties from computational descriptors, with the long-term goal of integrating AI into computational materials discovery workflows.
                 </p>
+                <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: "#94A3B8", fontFamily: "var(--font-space)" }}>Research Interests</p>
                 <div className="flex flex-wrap gap-2">
-                  {["Graph conv models", "ADMET prediction", "Multitask learning", "Scaffold splits"].map((u) => (
+                  {["Molecular graph learning", "Property prediction", "Structure–property modelling", "AI-assisted materials discovery"].map((u) => (
                     <span key={u} className="px-3 py-1.5 rounded-lg text-sm font-medium"
                       style={{ background: "#F1F5F9", color: "#64748B", fontFamily: "var(--font-ibm)" }}>
                       {u}
@@ -466,25 +466,23 @@ export default function AIDiscoveryPage() {
               </span>
               <h2 className="font-bold mb-4"
                 style={{ fontFamily: "var(--font-space)", fontSize: "clamp(1.5rem,2.5vw,2.1rem)", color: "#fff" }}>
-                AI-Driven Virtual Screening
+                AI-Assisted Discovery of Functional Materials
               </h2>
               <p className="text-base leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.65)" }}>
-                A <strong style={{ color: "#fff" }}>five-step AI pipeline</strong> that takes a large compound
-                library and intelligently narrows it down to the most promising metal-complex
-                candidates — ready for bench synthesis.
+                A <strong style={{ color: "#fff" }}>computational–experimental workflow</strong> that combines quantum chemical modelling, cheminformatics, and machine learning to accelerate the discovery of advanced functional materials for sensing, selective metal recovery, and sustainable technologies.
               </p>
               <div className="flex flex-col gap-6">
                 {[
-                  { n: "01", title: "Library Preparation",
-                    desc: "Parse all candidate structures with RDKit; generate 3-D shapes; convert file formats for downstream analysis." },
-                  { n: "02", title: "Drug-Likeness Filter",
-                    desc: "Apply Lipinski rules — checking molecular weight, water-solubility, and drug absorption potential — to keep only viable candidates." },
-                  { n: "03", title: "AI Similarity Ranking",
-                    desc: "Use machine learning to score each molecule by how similar it is to known active Ru complexes from the literature." },
-                  { n: "04", title: "Molecular Docking",
-                    desc: "Virtually place the top candidates inside the target protein using AutoDock and score how tightly each one binds (binding energy ΔG)." },
-                  { n: "05", title: "DFT Validation",
-                    desc: "Run quantum chemistry calculations on the shortlisted hits to verify their electronic structure and HOMO–LUMO gap. Best candidates go to the lab." },
+                  { n: "01", title: "Descriptor Library",
+                    desc: "Generate a virtual library of metal–ligand systems and functional nanomaterials. Compute DFT-derived electronic descriptors, including HOMO–LUMO energies, electrostatic potential surfaces, charge distribution, and global reactivity descriptors." },
+                  { n: "02", title: "Materials Property Screening",
+                    desc: "Rapidly screen candidates using physicochemical, structural, and electronic criteria to eliminate unstable or unsuitable materials before expensive calculations and experiments." },
+                  { n: "03", title: "AI-Assisted Property Prediction",
+                    desc: "Apply machine learning models trained on computational and experimental data to predict structure–property relationships, selectivity, and material performance, enabling rapid prioritisation of the most promising candidates." },
+                  { n: "04", title: "DFT Validation",
+                    desc: "Perform high-accuracy density functional theory calculations to validate the electronic structure, stability, and key properties of shortlisted materials before laboratory investigation." },
+                  { n: "05", title: "Experimental Validation",
+                    desc: "Synthesize and characterize the highest-ranked candidates, using experimental results to refine computational models and continuously improve future predictions." },
                 ].map((step) => (
                   <div key={step.n} className="flex gap-5 items-start">
                     <span className="w-11 h-11 rounded-xl flex items-center justify-center text-sm font-bold flex-shrink-0"
@@ -506,7 +504,7 @@ export default function AIDiscoveryPage() {
             <div className="flex flex-col gap-3">
               <p className="text-xs font-semibold uppercase tracking-widest mb-4"
                 style={{ color: "#0E7C7B", fontFamily: "var(--font-space)" }}>
-                How AI Narrows Thousands to a Handful
+                How AI Narrows Thousands of Materials to a Handful
               </p>
 
               {funnelStages.map((stage, idx, arr) => (
@@ -546,178 +544,9 @@ export default function AIDiscoveryPage() {
               ))}
 
               <p className="text-xs text-center pt-2" style={{ color: "rgba(255,255,255,0.3)", fontFamily: "var(--font-space)" }}>
-                Each stage filters smarter — only the most promising candidates reach the bench
+                Each stage progressively narrows the search space, allowing computational intelligence and experimental validation to work together so laboratory effort is focused on the most promising functional materials.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Multi-Agent AI ── */}
-      <section className="py-20" style={{ background: "#fff" }}>
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <span className="text-xs font-semibold uppercase tracking-widest mb-3 block"
-              style={{ color: "#0E7C7B", fontFamily: "var(--font-space)" }}>
-              Future Research Vision
-            </span>
-            <h2 className="font-bold mb-4"
-              style={{ fontFamily: "var(--font-space)", fontSize: "clamp(1.5rem,3vw,2.25rem)", color: "#0F172A" }}>
-              Multi-Agent AI for Computational Drug Design
-            </h2>
-            <p className="text-lg max-w-3xl mx-auto leading-relaxed" style={{ color: "#475569" }}>
-              During my PhD, designing a Ru complex, running{" "}
-              <strong style={{ color: "#0E7C7B" }}>DFT in GAUSSIAN</strong>, docking in{" "}
-              <strong style={{ color: "#0E7C7B" }}>AutoDock</strong>, and extracting{" "}
-              <strong style={{ color: "#0E7C7B" }}>SAR insights</strong> was done manually — one
-              compound at a time. Here is how specialised AI agents could automate that exact same workflow.
-            </p>
-          </div>
-
-          {/* Flow diagram */}
-          <div className="flex flex-col items-center mb-14">
-
-            {/* INPUT — Researcher */}
-            <div className="w-full max-w-lg">
-              <div className="rounded-2xl p-6 border-2 border-dashed flex gap-5 items-center"
-                style={{ borderColor: "#0E7C7B", background: "rgba(14,124,123,0.03)" }}>
-                <div className="flex-shrink-0 w-14 h-14 rounded-xl flex items-center justify-center"
-                  style={{ background: "rgba(14,124,123,0.08)" }}>
-                  <IconResearcher />
-                </div>
-                <div>
-                  <p className="font-bold text-lg mb-1" style={{ fontFamily: "var(--font-space)", color: "#0F172A" }}>
-                    Chemistry Researcher
-                  </p>
-                  <p className="text-base leading-relaxed" style={{ color: "#64748B" }}>
-                    Sets the goal: Ru scaffold · substituent library · target protein (e.g. PARP-1 / HSA)
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Arrow */}
-            <div className="flex flex-col items-center py-2">
-              <div className="w-px h-8" style={{ background: "#0E7C7B" }} />
-              <svg width="12" height="7" viewBox="0 0 12 7" fill="none" aria-hidden="true">
-                <path d="M1 1L6 6L11 1" stroke="#0E7C7B" strokeWidth="2" strokeLinecap="round"/>
-              </svg>
-            </div>
-
-            {/* ORCHESTRATOR */}
-            <div className="w-full max-w-lg">
-              <div className="rounded-2xl p-6 flex gap-5 items-center" style={{ background: "#0E7C7B" }}>
-                <div className="flex-shrink-0 w-14 h-14 rounded-xl flex items-center justify-center"
-                  style={{ background: "rgba(255,255,255,0.12)" }}>
-                  <IconOrchestrator />
-                </div>
-                <div>
-                  <p className="font-bold text-lg mb-1" style={{ fontFamily: "var(--font-space)", color: "#fff" }}>
-                    Orchestrator
-                  </p>
-                  <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.8)" }}>
-                    Receives the research goal, breaks it into tasks, and assigns each to a specialised agent in sequence
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Arrow */}
-            <div className="flex flex-col items-center py-2">
-              <div className="w-px h-8" style={{ background: "#0E7C7B" }} />
-              <svg width="12" height="7" viewBox="0 0 12 7" fill="none" aria-hidden="true">
-                <path d="M1 1L6 6L11 1" stroke="#0E7C7B" strokeWidth="2" strokeLinecap="round"/>
-              </svg>
-            </div>
-
-            {/* 4 AGENT CARDS */}
-            <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {agents.map(({ Icon, step, title, tool, color, desc, output }) => (
-                <div key={title} className="rounded-2xl border flex flex-col overflow-hidden"
-                  style={{ background: "#F8FAFC", borderColor: "#E2E8F0" }}>
-                  {/* Step header */}
-                  <div className="px-4 py-2 text-center text-sm font-bold"
-                    style={{ background: color, color: "#fff", fontFamily: "var(--font-ibm)", letterSpacing: "0.05em" }}>
-                    {step}
-                  </div>
-                  {/* Icon + title */}
-                  <div className="px-5 pt-5 pb-2 flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-                      style={{ background: `${color}15`, border: `1px solid ${color}30` }}>
-                      <Icon color={color} />
-                    </div>
-                    <div>
-                      <p className="font-bold text-base leading-tight" style={{ fontFamily: "var(--font-space)", color: "#0F172A" }}>
-                        {title}
-                      </p>
-                      <span className="text-xs font-medium px-2 py-0.5 rounded-md mt-1 inline-block"
-                        style={{ background: `${color}15`, color, fontFamily: "var(--font-ibm)" }}>
-                        {tool}
-                      </span>
-                    </div>
-                  </div>
-                  {/* Description */}
-                  <p className="text-sm leading-relaxed px-5 pb-4 flex-1" style={{ color: "#475569" }}>
-                    {desc}
-                  </p>
-                  {/* Output pill */}
-                  <div className="mx-4 mb-4 rounded-lg px-3 py-2 text-center"
-                    style={{ background: `${color}10`, border: `1px solid ${color}30` }}>
-                    <p className="text-xs font-semibold" style={{ color, fontFamily: "var(--font-space)" }}>
-                      ↓ {output}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Arrow */}
-            <div className="flex flex-col items-center py-2">
-              <div className="w-px h-8" style={{ background: "#22C55E" }} />
-              <svg width="12" height="7" viewBox="0 0 12 7" fill="none" aria-hidden="true">
-                <path d="M1 1L6 6L11 1" stroke="#22C55E" strokeWidth="2" strokeLinecap="round"/>
-              </svg>
-            </div>
-
-            {/* OUTPUT */}
-            <div className="w-full max-w-lg">
-              <div className="rounded-2xl p-6 border-2 flex gap-5 items-center"
-                style={{ borderColor: "#22C55E", background: "rgba(34,197,94,0.04)" }}>
-                <div className="flex-shrink-0 w-14 h-14 rounded-xl flex items-center justify-center"
-                  style={{ background: "rgba(34,197,94,0.08)" }}>
-                  <IconOutput />
-                </div>
-                <div>
-                  <p className="font-bold text-lg mb-1" style={{ fontFamily: "var(--font-space)", color: "#0F172A" }}>
-                    Shortlisted Lead Compounds
-                  </p>
-                  <p className="text-base leading-relaxed" style={{ color: "#64748B" }}>
-                    Top-ranked Ru complexes — filtered by <strong>HOMO–LUMO gap</strong>, binding <strong>ΔG</strong>, and <strong>ADME</strong> —
-                    passed directly to bench synthesis, saving weeks of manual iteration
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Benefit cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {benefits.map(({ Icon, title, desc }) => (
-              <div key={title} className="flex gap-4 p-5 rounded-xl border"
-                style={{ background: "#F8FAFC", borderColor: "#E2E8F0" }}>
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-                  style={{ background: "rgba(14,124,123,0.07)" }}>
-                  <Icon />
-                </div>
-                <div>
-                  <h4 className="font-bold text-base mb-1"
-                    style={{ color: "#0F172A", fontFamily: "var(--font-space)" }}>
-                    {title}
-                  </h4>
-                  <p className="text-sm leading-relaxed" style={{ color: "#64748B" }}>{desc}</p>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>

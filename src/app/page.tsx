@@ -379,7 +379,7 @@ export default function HomePage() {
             <div>
               <span className="text-xs font-semibold uppercase tracking-widest mb-3 block"
                 style={{ color: "#0E7C7B", fontFamily: "var(--font-space)" }}>
-                About the Research
+                About the Doctoral Research
               </span>
               <h2 className="font-bold mb-5"
                 style={{ fontFamily: "var(--font-space)", fontSize: "clamp(1.5rem,3vw,2.25rem)", color: "#0F172A" }}>
@@ -447,7 +447,7 @@ export default function HomePage() {
             </span>
             <h2 className="font-bold"
               style={{ fontFamily: "var(--font-space)", fontSize: "clamp(1.5rem,3vw,2.25rem)", color: "#0F172A" }}>
-              Research Domains
+              Doctoral Research Domains
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -468,12 +468,59 @@ export default function HomePage() {
             </span>
             <h2 className="font-bold"
               style={{ fontFamily: "var(--font-space)", fontSize: "clamp(1.5rem,3vw,2.25rem)", color: "#fff" }}>
-              Doctorate Research Workflow
+              Doctoral Research Workflow
             </h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
             {workflowSteps.map((s) => <WorkflowStep key={s.step} {...s} />)}
           </div>
+        </div>
+      </section>
+
+      {/* ── AI WORKFLOW ── */}
+      <section className="py-20" style={{ background: "#0a2640" }}>
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <span className="text-xs font-semibold uppercase tracking-widest mb-3 block"
+              style={{ color: "#0E7C7B", fontFamily: "var(--font-space)" }}>
+              From Prediction to Discovery
+            </span>
+            <h2 className="font-bold"
+              style={{ fontFamily: "var(--font-space)", fontSize: "clamp(1.5rem,3vw,2.25rem)", color: "#fff" }}>
+              AI-Assisted Materials Discovery Workflow
+            </h2>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+            {([
+              { step: "01", label: "Computational Library Design",  desc: "Generate virtual libraries of metal–ligand systems and functional nanomaterials using cheminformatics and Python-based computational workflows." },
+              { step: "02", label: "Quantum Chemical Modelling",     desc: "Perform DFT calculations to obtain electronic descriptors including HOMO–LUMO energies, electrostatic potential surfaces, and global reactivity descriptors." },
+              { step: "03", label: "AI-Assisted Materials Screening",desc: "Apply machine learning models to predict structure–property relationships, rank candidates, and identify the most promising systems." },
+              { step: "04", label: "Experimental Validation",        desc: "Synthesize and characterize the highest-ranked candidates to verify computational predictions using spectroscopic and structural techniques." },
+              { step: "05", label: "Structure–Property Analysis",    desc: "Correlate computational descriptors with experimental performance to understand the relationship between electronic structure and material functionality." },
+              { step: "06", label: "Iterative Materials Discovery",  desc: "Incorporate experimental results into computational models to continuously improve prediction accuracy and guide the next generation of functional materials." },
+            ] as { step: string; label: string; desc: string }[]).map((s) => (
+              <WorkflowStep key={s.step} {...s} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── QUOTE CALLOUT ── */}
+      <section className="py-16" style={{ background: "#071A2D" }}>
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <svg viewBox="0 0 40 28" width="40" height="28" fill="none" aria-hidden="true" className="mx-auto mb-6 opacity-30">
+            <path d="M0 28V16C0 9.6 3.2 4.8 9.6 1.6L12 6.4C8.8 8 6.8 10.4 6.4 14H12V28H0ZM22 28V16C22 9.6 25.2 4.8 31.6 1.6L34 6.4C30.8 8 28.8 10.4 28.4 14H34V28H22Z" fill="white"/>
+          </svg>
+          <p className="text-xl font-medium leading-relaxed mb-6"
+            style={{ color: "rgba(255,255,255,0.85)", fontFamily: "var(--font-space)" }}>
+            Designing next-generation functional materials through chemistry, computation, and artificial intelligence.
+          </p>
+          <p className="text-sm font-semibold" style={{ color: "#0E7C7B", fontFamily: "var(--font-space)" }}>
+            Dr. Farha Arshi
+          </p>
+          <p className="text-xs mt-1" style={{ color: "rgba(255,255,255,0.4)", fontFamily: "var(--font-space)" }}>
+            Synthetic &amp; Computational Chemist
+          </p>
         </div>
       </section>
 

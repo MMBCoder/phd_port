@@ -388,7 +388,7 @@ export default function AboutPage() {
             </span>
             <h2 className="font-bold mb-3"
               style={{ fontFamily: "var(--font-space)", fontSize: "clamp(1.5rem,3vw,2.25rem)", color: "#fff" }}>
-              How I Think About Discovery
+              How I Aim to Advance Discovery
             </h2>
             <p className="text-base max-w-xl mx-auto" style={{ color: "rgba(255,255,255,0.5)" }}>
               Four principles that guide the integration of computation, AI, and experiment in my research.
