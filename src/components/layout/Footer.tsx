@@ -21,7 +21,7 @@ export default function Footer() {
               Synthetic &amp; Computational Chemist
             </p>
             <p className="text-sm mt-1" style={{ color: "rgba(255,255,255,0.35)", fontStyle: "italic" }}>
-              &ldquo;Advancing medicinal chemistry through computational innovation.&rdquo;
+              &ldquo;Designing next-generation functional materials through chemistry, computation, and artificial intelligence.&rdquo;
             </p>
           </div>
 
